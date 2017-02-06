@@ -1,0 +1,313 @@
+<form>
+  <label>Applications</label>
+  <description>Application Overview Dashboard</description>
+  <fieldset submitButton="false" autoRun="true">
+    <input type="time" token="myTime" searchWhenChanged="true">
+      <label>Time Period</label>
+      <default>
+        <earliest>-60m@m</earliest>
+        <latest>now</latest>
+      </default>
+    </input>
+    <input type="dropdown" token="app" searchWhenChanged="true">
+      <label>Applications</label>
+      <choice value="*">All</choice>
+      <fieldForLabel>application_name</fieldForLabel>
+      <fieldForValue>application_id</fieldForValue>
+      <search>
+        <query>sourcetype=appdynamics_summary | spath application_id | dedup application_name  | table  application_id application_name | sort application_name</query>
+        <earliest>-7d@h</earliest>
+        <latest>now</latest>
+      </search>
+      <default>*</default>
+      <initialValue>*</initialValue>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>Average Response Time</title>
+      <chart>
+        <search>
+          <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
+
+ |  spath path=application_performance{} output=names 
+| fields - _raw 
+| fields  names | mvexpand names 
+| spath input=names 
+| fields - names 
+| rename metricValues{}.* as * 
+
+|  search metricPath="Overall Application Performance|Average Response Time (ms)"
+
+| timechart  avg(value) 
+| predict avg(value) future_timespan=20</query>
+          <earliest>$myTime.earliest$</earliest>
+          <latest>$myTime.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Incoming Traffic</title>
+      <chart>
+        <search>
+          <query>sourcetype=appdynamics_summary  source=infrastructure_performance application_id=$app$
+
+| spath path=infrastructure_performance{} output=names 
+| fields - _raw 
+| fields  names | mvexpand names 
+| spath input=names 
+| fields - names 
+| rename metricValues{}.* as * 
+
+| spath input=names 
+| search metricPath="*|*|*|Network|Incoming KB/sec"
+
+| timechart  avg(value) 
+| predict avg(value) future_timespan=20</query>
+          <earliest>$myTime.earliest$</earliest>
+          <latest>$myTime.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Outgoing Traffic</title>
+      <chart>
+        <search>
+          <query>sourcetype=appdynamics_summary  source=infrastructure_performance application_id=$app$
+
+| spath path=infrastructure_performance{} output=names 
+| fields - _raw 
+| fields  names | mvexpand names 
+| spath input=names 
+| fields - names 
+| rename metricValues{}.* as * 
+
+| spath input=names 
+| search metricPath="*|*|*|Network|Outgoing KB/sec"
+
+| timechart  avg(value) 
+| predict avg(value) future_timespan=20</query>
+          <earliest>$myTime.earliest$</earliest>
+          <latest>$myTime.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Errors per Minute</title>
+      <chart>
+        <search>
+          <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
+
+|  spath path=application_performance{} output=names 
+| fields - _raw 
+| fields  names | mvexpand names 
+| spath input=names 
+| fields - names 
+| rename metricValues{}.* as * 
+
+|  search metricPath="Overall Application Performance|Errors per Minute"
+
+| timechart  avg(value) 
+| predict avg(value) future_timespan=20</query>
+          <earliest>$myTime.earliest$</earliest>
+          <latest>$myTime.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>HTTP Errors per Minute</title>
+      <chart>
+        <search>
+          <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
+
+|  spath path=application_performance{} output=names 
+| fields - _raw 
+| fields  names | mvexpand names 
+| spath input=names 
+| fields - names 
+| rename metricValues{}.* as * 
+
+|  search metricPath="Overall Application Performance|HTTP Error Codes per Minute"
+
+| timechart  avg(value) 
+| predict avg(value) future_timespan=20</query>
+          <earliest>$myTime.earliest$</earliest>
+          <latest>$myTime.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Exceptions per Minute</title>
+      <chart>
+        <search>
+          <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
+
+|  spath path=application_performance{} output=names 
+| fields - _raw 
+| fields  names | mvexpand names 
+| spath input=names 
+| fields - names 
+| rename metricValues{}.* as * 
+
+|  search metricPath="Overall Application Performance|Exceptions per Minute"
+
+| timechart  avg(value) 
+| predict avg(value) future_timespan=20</query>
+          <earliest>$myTime.earliest$</earliest>
+          <latest>$myTime.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Calls per Minute</title>
+      <chart>
+        <search>
+          <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
+
+|  spath path=application_performance{} output=names 
+| fields - _raw 
+| fields  names | mvexpand names 
+| spath input=names 
+| fields - names 
+| rename metricValues{}.* as * 
+
+|  search metricPath="Overall Application Performance|Calls per Minute"
+
+| timechart  avg(value) 
+| predict avg(value) future_timespan=20</query>
+          <earliest>$myTime.earliest$</earliest>
+          <latest>$myTime.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Memory Used %</title>
+      <chart>
+        <search>
+          <query>sourcetype=appdynamics_summary  source=infrastructure_performance application_id=$app$
+
+| spath path=infrastructure_performance{} output=names 
+| fields - _raw 
+| fields  names | mvexpand names 
+| spath input=names 
+| fields - names 
+| rename metricValues{}.* as * 
+
+| spath input=names 
+| search metricPath="*|*|Hardware Resources|Memory|Used %"
+
+| timechart  avg(value)  
+| predict avg(value) future_timespan=20</query>
+          <earliest>$myTime.earliest$</earliest>
+          <latest>$myTime.latest$</latest>
+        </search>
+        <option name="charting.axisY.maximumNumber">100</option>
+        <option name="charting.axisY.minimumNumber">0</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.rangeValues">[0,15,30,100]</option>
+        <option name="charting.gaugeColors">["0xd13b3b","0xFFE800","0x84E900"]</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Free Memory %</title>
+      <chart>
+        <search>
+          <query>sourcetype=appdynamics_summary  source=infrastructure_performance application_id=$app$
+
+| spath path=infrastructure_performance{} output=names 
+| fields - _raw 
+| fields  names | mvexpand names 
+| spath input=names 
+| fields - names 
+| rename metricValues{}.* as * 
+
+| spath input=names 
+| search metricPath="*|*|Hardware Resources|Memory|Free %"
+
+| timechart  avg(value) 
+| predict avg(value) future_timespan=20</query>
+          <earliest>$myTime.earliest$</earliest>
+          <latest>$myTime.latest$</latest>
+        </search>
+        <option name="charting.axisY.maximumNumber">100</option>
+        <option name="charting.axisY.minimumNumber">0</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.rangeValues">[0,0.15,0.3,1]</option>
+        <option name="charting.gaugeColors">["0xd13b3b","0xFFE800","0x84E900"]</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>CPU Busy %</title>
+      <chart>
+        <search>
+          <query>sourcetype=appdynamics_summary  source=infrastructure_performance application_id=$app$
+
+| spath path=infrastructure_performance{} output=names 
+| fields - _raw 
+| fields  names | mvexpand names 
+| spath input=names 
+| fields - names 
+| rename metricValues{}.* as * 
+
+| spath input=names 
+| search metricPath="*|*|Hardware Resources|CPU|%Busy"
+
+| timechart  avg(value) 
+| predict avg(value) future_timespan=20</query>
+          <earliest>$myTime.earliest$</earliest>
+          <latest>$myTime.latest$</latest>
+        </search>
+        <option name="charting.axisY.maximumNumber">100</option>
+        <option name="charting.axisY.minimumNumber">0</option>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+        <option name="charting.chart.rangeValues">[0,0.15,0.3,1]</option>
+        <option name="charting.gaugeColors">["0x84E900","0xFFE800","0xBF3030"]</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Slow Calls</title>
+      <chart>
+        <search>
+          <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
+
+|  spath path=application_performance{} output=names 
+| fields - _raw 
+| fields  names | mvexpand names 
+| spath input=names 
+| fields - names 
+| rename metricValues{}.* as * 
+
+|  search metricPath="Overall Application Performance|Number of Slow Calls"
+
+| timechart  avg(value) 
+| predict avg(value) future_timespan=20</query>
+          <earliest>$myTime.earliest$</earliest>
+          <latest>$myTime.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+      </chart>
+    </panel>
+  </row>
+</form>

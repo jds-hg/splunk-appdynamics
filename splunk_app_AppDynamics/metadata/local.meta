@@ -1,0 +1,29 @@
+[app/ui]
+version = 6.5.2
+modtime = 1486148026.244779000
+
+[app/launcher]
+version = 6.5.2
+modtime = 1486148026.247468000
+
+[nav/default]
+version = 6.5.2
+modtime = 1486151438.036939000
+
+[views/setup_instructions]
+version = 6.5.2
+modtime = 1486154167.483481000
+
+[savedsearches/AppD%20Application%20List]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 6.5.2
+modtime = 1486151689.235412000
+
+[savedsearches/AppD%20Healthrule%20Violations]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 6.5.2
+modtime = 1486151770.644868000
