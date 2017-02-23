@@ -114,6 +114,15 @@ def collect_events(helper, ew):
             				#  and now grab the value attribute from metricValues and add it to this metric 
             				#mystr = '"%s":%s' % (metricName, values['value'])
             				d[metricName] = values['value']
+            				
+                if ( key == "infrastructure_performance"  ):
+                    for metrics in val:
+                    	for values in metrics['metricValues']:
+            				#  strip off the last 2 part of the metric name to insert in the Splunk event
+            				parts = metrics['metricPath'].split("|")
+            				metricName = "%s-%s" % (parts[len(parts)-2], parts[len(parts)-1])
+            				d[metricName] = values['value']
+
         return
 
 
