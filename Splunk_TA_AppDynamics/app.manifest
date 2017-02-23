@@ -5,7 +5,7 @@
     "id": {
       "group": null,
       "name": "Splunk_TA_AppDynamics",
-      "version": "1.5.0"
+      "version": "1.5.1"
     },
     "author": [
       {
@@ -15,7 +15,7 @@
       }
     ],
     "releaseDate": null,
-    "description": "Collect AppDynamics performance metrics for Overall Application, Business Transaction, Infrastructure and Health Rule Violations for all applications you are monitoring with AppDynamics",
+    "description": "Collect AppDynamics performance metrics for Overall Application, End User Experience,  Business Transaction, Infrastructure and Health Rule Violations for all applications you are monitoring with AppDynamics",
     "classification": {
       "intendedAudience": null,
       "categories": [],

@@ -5,6 +5,8 @@ import os
 import sys
 import time
 import datetime
+import base64
+import urlparse
 
 '''
     IMPORTANT
@@ -46,20 +48,26 @@ def collect_events(helper, ew):
     stanzas = helper.input_stanzas
     for stanza_name in stanzas:
         opt_host_port   = helper.get_arg('host_port')
-        opt_auth_token  = helper.get_arg('auth_token')
         opt_duration    = helper.get_arg('duration')
+        opt_account_name= helper.get_arg('account_name')
+        opt_userid      = helper.get_arg('appd_userid')
+        opt_password    = helper.get_arg('appd_password')
         opt_app_name    = helper.get_arg('app_name')
         #helper.log_info(' = '.join(['opt_app_name', str(opt_app_name)]))
         idx = helper.get_output_index()
         st = helper.get_sourcetype()
 
         # If there are more than 1 input of this type, the arguments will be in a dictionary so grab them out
-        if type(opt_auth_token) == dict:
+        if type(opt_host_port) == dict:
             opt_host_port   = opt_host_port[stanza_name]
-        if type(opt_auth_token) == dict:
-            opt_auth_token  = opt_auth_token[stanza_name]
         if type(opt_duration) == dict:
             opt_duration    = opt_duration[stanza_name]
+        if type(opt_account_name) == dict:
+            opt_account_name = opt_account_name[stanza_name]
+        if type(opt_userid) == dict:
+            opt_userid = opt_userid[stanza_name]
+        if type(opt_password) == dict:
+            opt_password = opt_password[stanza_name]
         if type(idx) == dict:
             idx = idx[stanza_name]
         if type(st) == dict:
@@ -70,10 +78,12 @@ def collect_events(helper, ew):
             opt_app_name = opt_app_name[stanza_name]
 
         #headers = {'Authorization':'Basic YmFzaWNAY3VzdG9tZXIxOnczbGNvbWU='}
-        headers =  {'Authorization': 'Basic {}'.format(opt_auth_token)}
+        auth_token = base64.b64encode(opt_userid + "@" + opt_account_name + ":" + opt_password).decode("ascii")
+        headers =  {'Authorization': 'Basic {}'.format(auth_token)}
         parameters = "output=JSON&time-range-type=BEFORE_NOW&duration-in-mins=" + opt_duration
         api_url = opt_host_port + "/controller/rest/applications"
-
+        appd_uuid =  urlparse.urlparse(opt_host_port).netloc + ":"
+        
     '''
     End of Variable declarations and initializations
     '''
@@ -90,16 +100,20 @@ def collect_events(helper, ew):
 
 
     def parse_piped_naming(d):
+        #  let's parse out the metricPath from component parts.  This will make our lives a little easier in Splunk ;-).
         for key, val in d.items():  
-            #  let's parse out the metricPath from into component parts.  This will make our lives a little easier in Splunk ;-).
             if isinstance(val, list):
-                for metrics in val:
-                    for key2, val2 in metrics.items():
-                        if key2 == "metricPath":
-                            parts = val2.split("|")
-                            for i in range(len(parts)):
-                                partName = "path-part-" + str(i+1)
-                                metrics[partName] = "{}".format(parts[i])
+        		# this value is a list object which means we are processing 'application_performance' or 'business_transactions', etc.
+                if ( key == "application_performance" or key == "end_user_experience" ):
+                    for metrics in val:
+                    	for values in metrics['metricValues']:
+            				#  strip off the very last part of the metric name to insert in the Splunk event
+            				parts = metrics['metricPath'].split("|")
+            				metricName = parts[len(parts)-1]
+            				
+            				#  and now grab the value attribute from metricValues and add it to this metric 
+            				#mystr = '"%s":%s' % (metricName, values['value'])
+            				d[metricName] = values['value']
         return
 
 
@@ -143,15 +157,19 @@ def collect_events(helper, ew):
 
 
         #  add the application ID & Name to the event so we can link back to AppDynamics in the UI
-        app_dict =  {'application_name': '{}'.format(app_name), 'application_id' : app_id }
+        app_dict =  {   'application_name': '{}'.format(app_name), 
+                        'application_id' : app_id, 
+                        'appd_app_uuid' : '{}'.format( appd_uuid + app_id ),
+                        'account_name' :  '{}'.format(opt_account_name)
+                    }
         app_dict[key_name] = r_json
         data = json.loads(json.dumps(app_dict))
  
         #  if there are empty elements, let's get rid of those.
         del_empty_items(data)
-        #parse_piped_naming(data)
+        parse_piped_naming(data)
 
-        
+
         #   Now write the event to Splunk
         event = helper.new_event(source=key_name, index=idx, sourcetype=st, data=json.dumps(data,sort_keys=True))
         try:
@@ -174,6 +192,11 @@ def collect_events(helper, ew):
         api_url = opt_host_port + "/controller/rest/applications/" + app_name + "/metric-data"
         params  = parameters + "&metric-path=Overall Application Performance|*"
         get_api_data( app_id, app_name, api_url, params, "application_performance" )
+
+        # End User Experience Metrics
+        api_url = opt_host_port + "/controller/rest/applications/" + app_name + "/metric-data"
+        params  = parameters + "&metric-path=End User Experience|App|*"
+        get_api_data( app_id, app_name, api_url, params, "end_user_experience" )
 
         # Busienss Transaction Metrics
         api_url = opt_host_port + "/controller/rest/applications/" + app_name + "/metric-data"

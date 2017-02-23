@@ -35,32 +35,6 @@
  
  
       <table>
-       <tr>
-          <th width="100%">Authorization Token</th>
-      </tr>
-      <tr>
-          <td>
-        Before creating any data inputs for AppDynamics you will need to create an Authorization token. This will help keep your your userid and password secure. This token is created by endocding your userid, password and account secret in a base64 hash.  Don't worry, it's a very easy thing to do, here's how:
-         <br/>
-         <br/>
-          <ol>
-            <li>Issue the following command from a *nix command line: <code>echo -n 'user@customer1:secret' | base64</code> </li>
-            <li>Save the resulting output.  This will be your Authorization token.</li>
-          </ol>
-        <br /> 
-        <b>Background Info:</b><br/>
-          Appdynamics' REST API can be invoked using a command line API request that looks something like this:<br/>
-         <code>curl --user user1@customer1:secret http://demo.appdynamics.com/controller/rest/applications/5/business-transactions</code>
-          <br/><br />
-          The values you would use for the --user parameter are the same ones to use for your Authentication token. 
-          <br /><br />
-          For more information and details please visit the <a href="https://docs.appdynamics.com/display/PRO42/AppDynamics+APIs"  target="_blank"> AppDynamics Documentation</a>.
-          <br/>
-          <br/>
-          Now that you have your token, let's setup our Data Input! 
-        </td>
-      </tr>
-        
       <tr>
           <th width="100%">Summary Input</th>
       </tr>
@@ -70,6 +44,7 @@
          The AppDynamics Summary data input gather metrics in the following categories for ALL applications in AppDynamics:<br /><br/>
          <ul>
            <li>Overall Application Performance</li>
+           <li>End User Experience</li>
            <li>Business Transaction Performance</li>
            <li>Infrastructure Performance</li>
            <li>Health Rule Violations</li>
@@ -90,7 +65,7 @@
          <br />
          
          Enter the settings below and save.  <br />
-         <img src="/static/app/splunk_app_AppDynamics/AppDynamics_SummaryInput.png" />
+         <img src="/static/app/splunk_app_AppDynamics/AppDynamics_SummaryInput.png" width="60%" />
          <br/>     
          <br />
          Now visit the <a href="/app/splunk_app_AppDynamics/appdynamics_overview" target="_blank">Overview</a> page and see your AppDynamics data!

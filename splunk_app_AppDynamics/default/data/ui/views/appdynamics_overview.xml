@@ -1,7 +1,7 @@
 <form>
   <label>Overview</label>
   <description>APM Data from Appdynamics</description>
-  <fieldset submitButton="false" autoRun="false">
+  <fieldset submitButton="false" autoRun="true">
     <input type="time" token="myTime" searchWhenChanged="true">
       <label>Time Period</label>
       <default>
@@ -25,42 +25,52 @@
   </fieldset>
   <row>
     <panel>
-      <title>Overall Application Performance Metrics</title>
-      <input type="dropdown" token="apm_metric">
+      <title>End User Experience Metrics</title>
+      <input type="dropdown" token="eum_metric" searchWhenChanged="true">
         <label>Metric</label>
-        <initialValue>Overall Application Performance|Average Response Time (ms)</initialValue>
-        <fieldForLabel>metricName</fieldForLabel>
-        <fieldForValue>metricPath</fieldForValue>
+        <default>End User Response Time (ms)</default>
+        <initialValue>End User Response Time (ms)</initialValue>
+        <fieldForLabel>column</fieldForLabel>
+        <fieldForValue>column</fieldForValue>
         <search>
-          <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
-
-|  spath path=application_performance{} output=names 
-| fields - _raw 
-| fields  application_name names | mvexpand names 
-| spath input=names 
-| eval fields=split(metricPath,"|") | eval metricName=mvindex(fields,1) 
-| dedup metricName 
-| table metricName metricPath  
-| sort metricName</query>
-          <earliest>-4h@m</earliest>
+          <query>sourcetype=appdynamics_summary  source=end_user_experience application_id=$app$
+ | stats dc() as * | transpose</query>
+          <earliest>-24h@h</earliest>
           <latest>now</latest>
         </search>
-        <default>Overall Application Performance|Average Response Time (ms)</default>
+      </input>
+      <chart>
+        <search>
+          <query>sourcetype=appdynamics_summary  source=end_user_experience application_id=$app$
+
+| timechart  avg("$eum_metric$") as "Average"</query>
+          <earliest>$myTime.earliest$</earliest>
+          <latest>$myTime.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Overall Application Performance Metrics</title>
+      <input type="dropdown" searchWhenChanged="true" token="apm_metric">
+        <label>Metric</label>
+        <fieldForLabel>column</fieldForLabel>
+        <search>
+          <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
+ | stats dc() as * | transpose</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
+        </search>
+        <initialValue>Average Response Time (ms)</initialValue>
+        <fieldForValue>column</fieldForValue>
+        <default>Average Response Time (ms)</default>
       </input>
       <chart>
         <search>
           <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
 
- |  spath path=application_performance{} output=names 
-| fields - _raw 
-| fields  names | mvexpand names 
-| spath input=names 
-| fields - names 
-| rename metricValues{}.* as * 
-
-|  search metricPath="$apm_metric$"
-
-| timechart  avg(value) as "Average"</query>
+| timechart  avg("$apm_metric$") as "Average"</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>

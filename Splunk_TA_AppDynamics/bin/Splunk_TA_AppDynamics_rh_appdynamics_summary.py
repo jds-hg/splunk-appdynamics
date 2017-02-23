@@ -29,8 +29,8 @@ fields = [
         encrypted=False,
         default='default',
         validator=validator.String(
-            min_len=1, 
             max_len=80, 
+            min_len=1, 
         )
     ), 
     field.RestField(
@@ -39,18 +39,38 @@ fields = [
         encrypted=False,
         default=None,
         validator=validator.String(
-            min_len=0, 
             max_len=8192, 
+            min_len=0, 
         )
     ), 
     field.RestField(
-        'auth_token',
+        'appd_userid',
         required=True,
         encrypted=False,
         default=None,
         validator=validator.String(
-            min_len=0, 
             max_len=8192, 
+            min_len=0, 
+        )
+    ), 
+    field.RestField(
+        'appd_password',
+        required=True,
+        encrypted=True,
+        default=None,
+        validator=validator.String(
+            max_len=8192, 
+            min_len=0, 
+        )
+    ), 
+    field.RestField(
+        'account_name',
+        required=True,
+        encrypted=False,
+        default='customer1',
+        validator=validator.String(
+            max_len=8192, 
+            min_len=0, 
         )
     ), 
     field.RestField(
@@ -59,8 +79,8 @@ fields = [
         encrypted=False,
         default='5',
         validator=validator.String(
-            min_len=0, 
             max_len=8192, 
+            min_len=0, 
         )
     ), 
     field.RestField(
@@ -69,8 +89,8 @@ fields = [
         encrypted=False,
         default=None,
         validator=validator.String(
-            min_len=0, 
             max_len=8192, 
+            min_len=0, 
         )
     ), 
 

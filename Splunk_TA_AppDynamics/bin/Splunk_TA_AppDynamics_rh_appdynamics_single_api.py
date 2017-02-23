@@ -29,8 +29,8 @@ fields = [
         encrypted=False,
         default='default',
         validator=validator.String(
-            min_len=1, 
             max_len=80, 
+            min_len=1, 
         )
     ), 
     field.RestField(
@@ -39,8 +39,8 @@ fields = [
         encrypted=False,
         default=None,
         validator=validator.String(
-            min_len=0, 
             max_len=8192, 
+            min_len=0, 
         )
     ), 
     field.RestField(
@@ -49,8 +49,8 @@ fields = [
         encrypted=False,
         default=None,
         validator=validator.String(
-            min_len=0, 
             max_len=8192, 
+            min_len=0, 
         )
     ), 
     field.RestField(
@@ -59,8 +59,8 @@ fields = [
         encrypted=False,
         default='5',
         validator=validator.String(
-            min_len=0, 
             max_len=8192, 
+            min_len=0, 
         )
     ), 
     field.RestField(
@@ -69,8 +69,8 @@ fields = [
         encrypted=False,
         default=None,
         validator=validator.String(
-            min_len=0, 
             max_len=8192, 
+            min_len=0, 
         )
     ), 
     field.RestField(
@@ -79,8 +79,8 @@ fields = [
         encrypted=False,
         default='/metric-data',
         validator=validator.String(
-            min_len=0, 
             max_len=8192, 
+            min_len=0, 
         )
     ), 
     field.RestField(
@@ -89,8 +89,8 @@ fields = [
         encrypted=False,
         default='metric-path=Overall Application Performance|*',
         validator=validator.String(
-            min_len=0, 
             max_len=8192, 
+            min_len=0, 
         )
     ), 
 

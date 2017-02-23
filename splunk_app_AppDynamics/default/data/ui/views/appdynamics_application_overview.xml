@@ -25,22 +25,28 @@
   </fieldset>
   <row>
     <panel>
+      <title>End User Average Response Time</title>
+      <chart>
+        <search>
+          <query>sourcetype=appdynamics_summary  source=end_user_experience application_id=$app$
+
+| timechart  avg("End User Response Time (ms)") 
+| predict avg("End User Response Time (ms)") future_timespan=20</query>
+          <earliest>$myTime.earliest$</earliest>
+          <latest>$myTime.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.chart.nullValueMode">connect</option>
+      </chart>
+    </panel>
+    <panel>
       <title>Average Response Time</title>
       <chart>
         <search>
           <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
 
- |  spath path=application_performance{} output=names 
-| fields - _raw 
-| fields  names | mvexpand names 
-| spath input=names 
-| fields - names 
-| rename metricValues{}.* as * 
-
-|  search metricPath="Overall Application Performance|Average Response Time (ms)"
-
-| timechart  avg(value) 
-| predict avg(value) future_timespan=20</query>
+| timechart  avg("Average Response Time (ms)") 
+| predict avg("Average Response Time (ms)") future_timespan=20(value) future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -106,17 +112,9 @@
         <search>
           <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
 
-|  spath path=application_performance{} output=names 
-| fields - _raw 
-| fields  names | mvexpand names 
-| spath input=names 
-| fields - names 
-| rename metricValues{}.* as * 
 
-|  search metricPath="Overall Application Performance|Errors per Minute"
-
-| timechart  avg(value) 
-| predict avg(value) future_timespan=20</query>
+| timechart  avg("Errors per Minute") 
+| predict avg("Errors per Minute") future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -130,17 +128,8 @@
         <search>
           <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
 
-|  spath path=application_performance{} output=names 
-| fields - _raw 
-| fields  names | mvexpand names 
-| spath input=names 
-| fields - names 
-| rename metricValues{}.* as * 
-
-|  search metricPath="Overall Application Performance|HTTP Error Codes per Minute"
-
-| timechart  avg(value) 
-| predict avg(value) future_timespan=20</query>
+| timechart  avg("HTTP Error Codes per Minute") 
+| predict avg("HTTP Error Codes per Minute") future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -154,17 +143,8 @@
         <search>
           <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
 
-|  spath path=application_performance{} output=names 
-| fields - _raw 
-| fields  names | mvexpand names 
-| spath input=names 
-| fields - names 
-| rename metricValues{}.* as * 
-
-|  search metricPath="Overall Application Performance|Exceptions per Minute"
-
-| timechart  avg(value) 
-| predict avg(value) future_timespan=20</query>
+| timechart  avg("Exceptions per Minute") 
+| predict avg("Exceptions per Minute") future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -178,17 +158,8 @@
         <search>
           <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
 
-|  spath path=application_performance{} output=names 
-| fields - _raw 
-| fields  names | mvexpand names 
-| spath input=names 
-| fields - names 
-| rename metricValues{}.* as * 
-
-|  search metricPath="Overall Application Performance|Calls per Minute"
-
-| timechart  avg(value) 
-| predict avg(value) future_timespan=20</query>
+| timechart  avg("Calls per Minute") 
+| predict avg("Calls per Minute") future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -291,17 +262,8 @@
         <search>
           <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
 
-|  spath path=application_performance{} output=names 
-| fields - _raw 
-| fields  names | mvexpand names 
-| spath input=names 
-| fields - names 
-| rename metricValues{}.* as * 
-
-|  search metricPath="Overall Application Performance|Number of Slow Calls"
-
-| timechart  avg(value) 
-| predict avg(value) future_timespan=20</query>
+| timechart  avg("Number of Slow Calls") 
+| predict avg("Number of Slow Calls") future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
