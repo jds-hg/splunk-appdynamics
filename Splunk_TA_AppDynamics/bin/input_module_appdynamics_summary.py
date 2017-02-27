@@ -53,6 +53,7 @@ def collect_events(helper, ew):
         opt_userid      = helper.get_arg('appd_userid')
         opt_password    = helper.get_arg('appd_password')
         opt_app_name    = helper.get_arg('app_name')
+        opt_metrics     = json.dumps(helper.get_arg('metrics_to_collect'))
         #helper.log_info(' = '.join(['opt_app_name', str(opt_app_name)]))
         idx = helper.get_output_index()
         st = helper.get_sourcetype()
@@ -68,6 +69,8 @@ def collect_events(helper, ew):
             opt_userid = opt_userid[stanza_name]
         if type(opt_password) == dict:
             opt_password = opt_password[stanza_name]
+        if type(opt_metrics) == dict:
+            opt_metrics = opt_metrics[stanza_name]
         if type(idx) == dict:
             idx = idx[stanza_name]
         if type(st) == dict:
@@ -193,34 +196,40 @@ def collect_events(helper, ew):
         helper.log_info("processing app_id:" + app_id + "    app_name:" + app_name)
 
         # Application Infrastructure Performance Metrics
-        api_url = opt_host_port + "/controller/rest/applications/" + app_name + "/metric-data"
-        params  = parameters + "&metric-path=Application Infrastructure Performance|*|*|*|*"
-        get_api_data( app_id, app_name, api_url, params, "infrastructure_performance" )
+        if "infra" in opt_metrics:
+            api_url = opt_host_port + "/controller/rest/applications/" + app_name + "/metric-data"
+            params  = parameters + "&metric-path=Application Infrastructure Performance|*|*|*|*"
+            get_api_data( app_id, app_name, api_url, params, "infrastructure_performance" )
 
         # Overall Application Performance Metrics
-        api_url = opt_host_port + "/controller/rest/applications/" + app_name + "/metric-data"
-        params  = parameters + "&metric-path=Overall Application Performance|*"
-        get_api_data( app_id, app_name, api_url, params, "application_performance" )
-
+        if "apm" in opt_metrics:
+            api_url = opt_host_port + "/controller/rest/applications/" + app_name + "/metric-data"
+            params  = parameters + "&metric-path=Overall Application Performance|*"
+            get_api_data( app_id, app_name, api_url, params, "application_performance" )
+    
         # End User Experience Metrics
-        api_url = opt_host_port + "/controller/rest/applications/" + app_name + "/metric-data"
-        params  = parameters + "&metric-path=End User Experience|App|*"
-        get_api_data( app_id, app_name, api_url, params, "end_user_experience" )
-
+        if "euem" in opt_metrics:
+            api_url = opt_host_port + "/controller/rest/applications/" + app_name + "/metric-data"
+            params  = parameters + "&metric-path=End User Experience|App|*"
+            get_api_data( app_id, app_name, api_url, params, "end_user_experience" )
+    
         # Busienss Transaction Metrics
-        api_url = opt_host_port + "/controller/rest/applications/" + app_name + "/metric-data"
-        params  = parameters + "&metric-path=Business Transaction Performance|*|*|*|*"
-        get_api_data( app_id, app_name, api_url, params, "business_transactions" )
-
+        if "bt" in opt_metrics:
+            api_url = opt_host_port + "/controller/rest/applications/" + app_name + "/metric-data"
+            params  = parameters + "&metric-path=Business Transaction Performance|*|*|*|*"
+            get_api_data( app_id, app_name, api_url, params, "business_transactions" )
+    
         # Healthrule Violations
-        api_url = opt_host_port + "/controller/rest/applications/" + app_name + "/problems/healthrule-violations"
-        params  = parameters
-        get_api_data( app_id, app_name, api_url, params, "healthrule_violations" )
-
+        if "violations" in opt_metrics:
+            api_url = opt_host_port + "/controller/rest/applications/" + app_name + "/problems/healthrule-violations"
+            params  = parameters
+            get_api_data( app_id, app_name, api_url, params, "healthrule_violations" )
+    
         # Application Event 
-        api_url = opt_host_port + "/controller/rest/applications/" + app_name + "/events"
-        params  = parameters + "&event-types=APPLICATION_ERROR,DIAGNOSTIC_SESSION&severities=INFO,WARN,ERROR"
-        get_api_data( app_id, app_name, api_url, params, "application_events" )
+        if "events" in opt_metrics:
+            api_url = opt_host_port + "/controller/rest/applications/" + app_name + "/events"
+            params  = parameters + "&event-types=APPLICATION_ERROR,DIAGNOSTIC_SESSION&severities=INFO,WARN,ERROR"
+            get_api_data( app_id, app_name, api_url, params, "application_events" )
 
         return;
 

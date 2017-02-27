@@ -2,7 +2,7 @@
     "meta": {
         "displayName": "Splunk Add-on for AppDynamics", 
         "apiVersion": "3.0.0", 
-        "version": "1.5.1", 
+        "version": "1.5.2", 
         "restRoot": "Splunk_TA_AppDynamics", 
         "name": "Splunk_TA_AppDynamics"
     }, 
@@ -61,6 +61,10 @@
                     {
                         "field": "account_name", 
                         "label": "AppD Account Name"
+                    }, 
+                    {
+                        "field": "metrics_to_collect", 
+                        "label": "Metrics to Collect"
                     }
                 ], 
                 "header": [
@@ -88,11 +92,13 @@
                     "clone"
                 ]
             }, 
-            "description": "Manage the data inputs", 
+            "description": "Manage your data inputs", 
             "services": [
                 {
                     "entity": [
                         {
+                            "required": true, 
+                            "help": "Enter a unique name for the data input", 
                             "field": "name", 
                             "validators": [
                                 {
@@ -108,13 +114,12 @@
                                 }
                             ], 
                             "type": "text", 
-                            "label": "Name", 
-                            "required": true, 
-                            "help": "Enter a unique name for the data input"
+                            "label": "Name"
                         }, 
                         {
-                            "field": "interval", 
+                            "required": true, 
                             "help": "Time interval of input in seconds.", 
+                            "field": "interval", 
                             "validators": [
                                 {
                                     "pattern": "^\\-[1-9]\\d*$|^\\d*$", 
@@ -126,6 +131,13 @@
                             "label": "Interval"
                         }, 
                         {
+                            "defaultValue": "default", 
+                            "required": true, 
+                            "options": {
+                                "blackList": "^_.*$", 
+                                "createSearchChoice": true, 
+                                "endpointUrl": "data/indexes"
+                            }, 
                             "field": "index", 
                             "validators": [
                                 {
@@ -136,16 +148,11 @@
                                 }
                             ], 
                             "type": "singleSelect", 
-                            "options": {
-                                "blackList": "^_.*$", 
-                                "createSearchChoice": true, 
-                                "endpointUrl": "data/indexes"
-                            }, 
-                            "defaultValue": "default", 
-                            "required": true, 
                             "label": "Index"
                         }, 
                         {
+                            "required": true, 
+                            "help": "Enter the host and port for your AppDynamics Collector", 
                             "field": "host_port", 
                             "validators": [
                                 {
@@ -156,11 +163,11 @@
                                 }
                             ], 
                             "type": "text", 
-                            "label": "AppDynamics Host:Port", 
-                            "required": true, 
-                            "help": "Enter the host and port for your AppDynamics Collector"
+                            "label": "AppDynamics Host:Port"
                         }, 
                         {
+                            "required": true, 
+                            "help": "For a single tenant controller use the output of.: \necho -n '<user>@customer1:<password>' | base64'\n\nfor multi-tenant controller use the output of:\necho -n '<user>@<accountname>:<password>' | base64'\n", 
                             "field": "auth_token", 
                             "validators": [
                                 {
@@ -171,11 +178,12 @@
                                 }
                             ], 
                             "type": "text", 
-                            "label": "Authorization Token", 
-                            "required": true, 
-                            "help": "For a single tenant controller use the output of.: \necho -n '<user>@customer1:<password>' | base64'\n\nfor multi-tenant controller use the output of:\necho -n '<user>@<accountname>:<password>' | base64'\n"
+                            "label": "Authorization Token"
                         }, 
                         {
+                            "defaultValue": "5", 
+                            "required": true, 
+                            "help": "The time period (in minutes) that you wish to retrieve data for.  \ne.g.:  5 = retrieve data for the past 5 minutes.", 
                             "field": "duration", 
                             "validators": [
                                 {
@@ -186,12 +194,11 @@
                                 }
                             ], 
                             "type": "text", 
-                            "label": "Tim Duration (in minutes)", 
-                            "defaultValue": "5", 
-                            "required": true, 
-                            "help": "The time period (in minutes) that you wish to retrieve data for.  \ne.g.:  5 = retrieve data for the past 5 minutes."
+                            "label": "Tim Duration (in minutes)"
                         }, 
                         {
+                            "required": true, 
+                            "help": "The name (or ID) of your Application in AppDynamics", 
                             "field": "app_name", 
                             "validators": [
                                 {
@@ -202,11 +209,12 @@
                                 }
                             ], 
                             "type": "text", 
-                            "label": "Application Name", 
-                            "required": true, 
-                            "help": "The name (or ID) of your Application in AppDynamics"
+                            "label": "Application Name"
                         }, 
                         {
+                            "defaultValue": "/metric-data", 
+                            "required": true, 
+                            "help": "e.g.:  /metric-data    --or-- /events   --or--  /problems/healthrule-violations", 
                             "field": "url_path", 
                             "validators": [
                                 {
@@ -217,12 +225,12 @@
                                 }
                             ], 
                             "type": "text", 
-                            "label": "URL Path", 
-                            "defaultValue": "/metric-data", 
-                            "required": true, 
-                            "help": "e.g.:  /metric-data    --or-- /events   --or--  /problems/healthrule-violations"
+                            "label": "URL Path"
                         }, 
                         {
+                            "defaultValue": "metric-path=Overall Application Performance|*", 
+                            "required": true, 
+                            "help": "e.g.: /metric-data  REQUIRES  metric-path=Overall Application Performance|* (hint: use 'Copy Full Path' in the AppDynamics Metric Browser)", 
                             "field": "params", 
                             "validators": [
                                 {
@@ -233,10 +241,7 @@
                                 }
                             ], 
                             "type": "text", 
-                            "label": "Parameters", 
-                            "defaultValue": "metric-path=Overall Application Performance|*", 
-                            "required": true, 
-                            "help": "e.g.: /metric-data  REQUIRES  metric-path=Overall Application Performance|* (hint: use 'Copy Full Path' in the AppDynamics Metric Browser)"
+                            "label": "Parameters"
                         }
                     ], 
                     "title": "AppDynamics Single API Call", 
@@ -245,6 +250,8 @@
                 {
                     "entity": [
                         {
+                            "required": true, 
+                            "help": "Enter a unique name for the data input", 
                             "field": "name", 
                             "validators": [
                                 {
@@ -260,13 +267,12 @@
                                 }
                             ], 
                             "type": "text", 
-                            "label": "Name", 
-                            "required": true, 
-                            "help": "Enter a unique name for the data input"
+                            "label": "Name"
                         }, 
                         {
-                            "field": "interval", 
+                            "required": true, 
                             "help": "Time interval of input in seconds.", 
+                            "field": "interval", 
                             "validators": [
                                 {
                                     "pattern": "^\\-[1-9]\\d*$|^\\d*$", 
@@ -278,6 +284,13 @@
                             "label": "Interval"
                         }, 
                         {
+                            "defaultValue": "default", 
+                            "required": true, 
+                            "options": {
+                                "blackList": "^_.*$", 
+                                "createSearchChoice": true, 
+                                "endpointUrl": "data/indexes"
+                            }, 
                             "field": "index", 
                             "validators": [
                                 {
@@ -288,16 +301,11 @@
                                 }
                             ], 
                             "type": "singleSelect", 
-                            "options": {
-                                "blackList": "^_.*$", 
-                                "createSearchChoice": true, 
-                                "endpointUrl": "data/indexes"
-                            }, 
-                            "defaultValue": "default", 
-                            "required": true, 
                             "label": "Index"
                         }, 
                         {
+                            "required": true, 
+                            "help": "Enter the URL and Port for your AppDynamics Collector", 
                             "field": "host_port", 
                             "validators": [
                                 {
@@ -308,11 +316,11 @@
                                 }
                             ], 
                             "type": "text", 
-                            "label": "AppD Collector URL", 
-                            "required": true, 
-                            "help": "Enter the URL and Port for your AppDynamics Collector"
+                            "label": "AppD Collector URL"
                         }, 
                         {
+                            "required": true, 
+                            "help": "The userid you use to login to AppDynamics", 
                             "field": "appd_userid", 
                             "validators": [
                                 {
@@ -323,11 +331,12 @@
                                 }
                             ], 
                             "type": "text", 
-                            "label": "AppD UserID", 
-                            "required": true, 
-                            "help": "The userid you use to login to AppDynamics"
+                            "label": "AppD UserID"
                         }, 
                         {
+                            "required": true, 
+                            "encrypted": true, 
+                            "help": "The password you use to login to AppDynamics", 
                             "field": "appd_password", 
                             "validators": [
                                 {
@@ -338,12 +347,12 @@
                                 }
                             ], 
                             "type": "text", 
-                            "encrypted": true, 
-                            "required": true, 
-                            "label": "AppD Password", 
-                            "help": "The password you use to login to AppDynamics"
+                            "label": "AppD Password"
                         }, 
                         {
+                            "defaultValue": "customer1", 
+                            "required": true, 
+                            "help": "For most on-premise deployments this will be the default value of 'customer1'.   For SaaS deployments this will be your account name. ", 
                             "field": "account_name", 
                             "validators": [
                                 {
@@ -354,12 +363,12 @@
                                 }
                             ], 
                             "type": "text", 
-                            "label": "AppD Account Name", 
-                            "defaultValue": "customer1", 
-                            "required": true, 
-                            "help": "For most on-premise deployments this will be the default value of 'customer1'.   For SaaS deployments this will be your account name. "
+                            "label": "AppD Account Name"
                         }, 
                         {
+                            "defaultValue": "5", 
+                            "required": true, 
+                            "help": "The time period (in minutes) that you wish to retrieve data for.  e.g.:  5 = retrieve data for the past 5 minutes.", 
                             "field": "duration", 
                             "validators": [
                                 {
@@ -370,12 +379,48 @@
                                 }
                             ], 
                             "type": "text", 
-                            "label": "Time Duration (in minutes)", 
-                            "defaultValue": "5", 
-                            "required": true, 
-                            "help": "The time period (in minutes) that you wish to retrieve data for.  e.g.:  5 = retrieve data for the past 5 minutes."
+                            "label": "Time Duration (in minutes)"
                         }, 
                         {
+                            "defaultValue": "apm~euem~events~violations", 
+                            "required": true, 
+                            "options": {
+                                "items": [
+                                    {
+                                        "value": "apm", 
+                                        "label": "Application Performance"
+                                    }, 
+                                    {
+                                        "value": "euem", 
+                                        "label": "End User Experience"
+                                    }, 
+                                    {
+                                        "value": "bt", 
+                                        "label": "Business Transactions"
+                                    }, 
+                                    {
+                                        "value": "events", 
+                                        "label": "Application Events"
+                                    }, 
+                                    {
+                                        "value": "violations", 
+                                        "label": "Health Rule Violations"
+                                    }, 
+                                    {
+                                        "value": "infra", 
+                                        "label": "Infrastructure Performance"
+                                    }
+                                ], 
+                                "delimiter": "~"
+                            }, 
+                            "help": "Note: Infrastructure Performance can have a significant impact on AppDynamics REST API and thereby it's controller's performance.   Use  Infrastructure Performance with caution. ", 
+                            "field": "metrics_to_collect", 
+                            "type": "multipleSelect", 
+                            "label": "Metrics to Collect"
+                        }, 
+                        {
+                            "required": false, 
+                            "help": "Leave this blank to retrieve data for ALL applications in AppDynamics.  If you only want a single application, enter that application's name here.", 
                             "field": "app_name", 
                             "validators": [
                                 {
@@ -386,9 +431,7 @@
                                 }
                             ], 
                             "type": "text", 
-                            "label": "Application Name (optional)", 
-                            "required": false, 
-                            "help": "Leave this blank to retrieve data for ALL applications in AppDynamics.  If you only want a single application, enter that application's name here."
+                            "label": "Application Name (optional)"
                         }
                     ], 
                     "title": "AppDynamics Summary", 
@@ -398,7 +441,7 @@
             "title": "Inputs"
         }, 
         "configuration": {
-            "description": "Setup your add-on global configurations", 
+            "description": "Set up your add-on", 
             "tabs": [
                 {
                     "entity": [
@@ -471,8 +514,6 @@
                             "label": "Username"
                         }, 
                         {
-                            "field": "proxy_password", 
-                            "encrypted": true, 
                             "validators": [
                                 {
                                     "maxLength": 8192, 
@@ -481,6 +522,8 @@
                                     "errorMsg": "Max length of password is 8192"
                                 }
                             ], 
+                            "field": "proxy_password", 
+                            "encrypted": true, 
                             "type": "text", 
                             "label": "Password"
                         }, 

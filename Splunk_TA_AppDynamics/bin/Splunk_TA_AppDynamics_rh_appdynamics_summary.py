@@ -16,7 +16,7 @@ util.remove_http_proxy_env_vars()
 fields = [
     field.RestField(
         'interval',
-        required=False,
+        required=True,
         encrypted=False,
         default=None,
         validator=validator.Pattern(
@@ -82,6 +82,13 @@ fields = [
             min_len=0, 
             max_len=8192, 
         )
+    ), 
+    field.RestField(
+        'metrics_to_collect',
+        required=True,
+        encrypted=False,
+        default='apm~euem~events~violations',
+        validator=None
     ), 
     field.RestField(
         'app_name',

@@ -12,4 +12,5 @@ appd_userid = The userid you use to login to AppDynamics
 appd_password = The password you use to login to AppDynamics
 account_name = For most on-premise deployments this will be the default value of 'customer1'.   For SaaS deployments this will be your account name.
 duration = The time period (in minutes) that you wish to retrieve data for.  e.g.:  5 = retrieve data for the past 5 minutes.
+metrics_to_collect = Note: Infrastructure Performance can have a significant impact on AppDynamics REST API and thereby it's controller's performance.   Use  Infrastructure Performance with caution.
 app_name = Leave this blank to retrieve data for ALL applications in AppDynamics.  If you only want a single application, enter that application's name here.

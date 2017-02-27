@@ -16,7 +16,7 @@ util.remove_http_proxy_env_vars()
 fields = [
     field.RestField(
         'interval',
-        required=False,
+        required=True,
         encrypted=False,
         default=None,
         validator=validator.Pattern(
