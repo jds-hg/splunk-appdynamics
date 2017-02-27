@@ -30,8 +30,12 @@ modtime = 1486151770.644868000
 
 [views/appdynamics_application_overview]
 version = 6.5.2
-modtime = 1487829865.380593000
+modtime = 1487878379.963128000
 
 [views/appdynamics_overview]
 version = 6.5.2
-modtime = 1487832543.711801000
+modtime = 1487876883.576404000
+
+[app/install/install_source_checksum]
+version = 6.5.2
+modtime = 1487832881.940830000

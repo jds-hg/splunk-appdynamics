@@ -30,8 +30,8 @@
         <search>
           <query>sourcetype=appdynamics_summary  source=end_user_experience application_id=$app$
 
-| timechart  avg("End User Response Time (ms)") 
-| predict avg("End User Response Time (ms)") future_timespan=20</query>
+| timechart  avg("End User Response Time (ms)") as Average
+|predict Average future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -45,8 +45,9 @@
         <search>
           <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
 
-| timechart  avg("Average Response Time (ms)") 
-| predict avg("Average Response Time (ms)") future_timespan=20(value) future_timespan=20</query>
+| timechart  avg("Average Response Time (ms)") as Average
+
+|predict Average future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -55,23 +56,13 @@
       </chart>
     </panel>
     <panel>
-      <title>Incoming Traffic</title>
+      <title>Incoming Traffic KB/sec</title>
       <chart>
         <search>
           <query>sourcetype=appdynamics_summary  source=infrastructure_performance application_id=$app$
 
-| spath path=infrastructure_performance{} output=names 
-| fields - _raw 
-| fields  names | mvexpand names 
-| spath input=names 
-| fields - names 
-| rename metricValues{}.* as * 
-
-| spath input=names 
-| search metricPath="*|*|*|Network|Incoming KB/sec"
-
-| timechart  avg(value) 
-| predict avg(value) future_timespan=20</query>
+| timechart avg("Network-Incoming KB/sec") as Average
+|predict Average future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -80,23 +71,13 @@
       </chart>
     </panel>
     <panel>
-      <title>Outgoing Traffic</title>
+      <title>Outgoing Traffic KB/sec</title>
       <chart>
         <search>
           <query>sourcetype=appdynamics_summary  source=infrastructure_performance application_id=$app$
 
-| spath path=infrastructure_performance{} output=names 
-| fields - _raw 
-| fields  names | mvexpand names 
-| spath input=names 
-| fields - names 
-| rename metricValues{}.* as * 
-
-| spath input=names 
-| search metricPath="*|*|*|Network|Outgoing KB/sec"
-
-| timechart  avg(value) 
-| predict avg(value) future_timespan=20</query>
+| timechart avg("Network-Outgoing KB/sec") as Average
+|predict Average future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -114,7 +95,9 @@
 
 
 | timechart  avg("Errors per Minute") 
-| predict avg("Errors per Minute") future_timespan=20</query>
+as Average
+
+|predict Average future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -128,8 +111,8 @@
         <search>
           <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
 
-| timechart  avg("HTTP Error Codes per Minute") 
-| predict avg("HTTP Error Codes per Minute") future_timespan=20</query>
+| timechart  avg("HTTP Error Codes per Minute") as Average
+| predict Average future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -144,7 +127,9 @@
           <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
 
 | timechart  avg("Exceptions per Minute") 
-| predict avg("Exceptions per Minute") future_timespan=20</query>
+as Average
+
+|predict Average future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -159,7 +144,9 @@
           <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
 
 | timechart  avg("Calls per Minute") 
-| predict avg("Calls per Minute") future_timespan=20</query>
+as Average
+
+|predict Average future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -175,18 +162,8 @@
         <search>
           <query>sourcetype=appdynamics_summary  source=infrastructure_performance application_id=$app$
 
-| spath path=infrastructure_performance{} output=names 
-| fields - _raw 
-| fields  names | mvexpand names 
-| spath input=names 
-| fields - names 
-| rename metricValues{}.* as * 
-
-| spath input=names 
-| search metricPath="*|*|Hardware Resources|Memory|Used %"
-
-| timechart  avg(value)  
-| predict avg(value) future_timespan=20</query>
+| timechart  avg("Memory-Used %")  as Average
+|predict Average future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -204,18 +181,8 @@
         <search>
           <query>sourcetype=appdynamics_summary  source=infrastructure_performance application_id=$app$
 
-| spath path=infrastructure_performance{} output=names 
-| fields - _raw 
-| fields  names | mvexpand names 
-| spath input=names 
-| fields - names 
-| rename metricValues{}.* as * 
-
-| spath input=names 
-| search metricPath="*|*|Hardware Resources|Memory|Free %"
-
-| timechart  avg(value) 
-| predict avg(value) future_timespan=20</query>
+| timechart  avg("Memory-Free %")  as Average
+|predict Average future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -233,18 +200,8 @@
         <search>
           <query>sourcetype=appdynamics_summary  source=infrastructure_performance application_id=$app$
 
-| spath path=infrastructure_performance{} output=names 
-| fields - _raw 
-| fields  names | mvexpand names 
-| spath input=names 
-| fields - names 
-| rename metricValues{}.* as * 
-
-| spath input=names 
-| search metricPath="*|*|Hardware Resources|CPU|%Busy"
-
-| timechart  avg(value) 
-| predict avg(value) future_timespan=20</query>
+| timechart  avg("CPU-%Busy")  as Average
+|predict Average future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
@@ -262,8 +219,8 @@
         <search>
           <query>sourcetype=appdynamics_summary  source=application_performance application_id=$app$
 
-| timechart  avg("Number of Slow Calls") 
-| predict avg("Number of Slow Calls") future_timespan=20</query>
+| timechart  avg("Number of Slow Calls")  as Average
+|predict Average future_timespan=20</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>

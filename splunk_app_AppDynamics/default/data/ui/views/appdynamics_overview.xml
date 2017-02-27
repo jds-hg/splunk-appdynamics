@@ -85,68 +85,26 @@
   <row>
     <panel>
       <title>Infrastructure  Performance Metrics</title>
-      <input type="dropdown" token="infr_metric_area" searchWhenChanged="true">
-        <label>Metric Area</label>
-        <fieldForLabel>area</fieldForLabel>
-        <fieldForValue>area</fieldForValue>
-        <search>
-          <query>sourcetype=appdynamics_summary  source=infrastructure_performance application_id=96
-|  spath path=infrastructure_performance{} output=names 
-| fields - _raw 
-| fields  names | mvexpand names 
-| spath input=names 
-| fields - names 
-| rename metricValues{}.* as * 
-| mvexpand values 
-| spath input=names 
-| eval fields=split(metricPath,"|") | eval area=mvindex(fields,2), metricCat=mvindex(fields,3) 
-| dedup area 
-| table area   
-| sort area</query>
-        </search>
-        <default>Hardware Resources</default>
-        <initialValue>Hardware Resources</initialValue>
-      </input>
-      <input type="dropdown" token="infr_metric_cat" searchWhenChanged="true">
-        <label>Metric Category</label>
-        <choice value="*">All</choice>
-        <default>CPU</default>
-        <fieldForLabel>metricCat</fieldForLabel>
-        <fieldForValue>metricCat</fieldForValue>
+      <input type="dropdown" token="infr_metric" searchWhenChanged="true">
+        <label>Metric</label>
+        <default>App-Availability</default>
+        <fieldForLabel>column</fieldForLabel>
+        <fieldForValue>column</fieldForValue>
         <search>
           <query>sourcetype=appdynamics_summary  source=infrastructure_performance application_id=$app$
-|  spath path=infrastructure_performance{} output=names 
-| fields - _raw 
-| fields  names | mvexpand names 
-| spath input=names 
-| fields - names 
-| rename metricValues{}.* as * 
-| mvexpand values 
-| spath input=names 
-| eval fields=split(metricPath,"|") | eval area=mvindex(fields,2), metricCat=mvindex(fields,3) 
-| search area="$infr_metric_area$" 
-| dedup area metricCat 
-| table area metricCat  
-| sort area metricCat</query>
+
+ | stats dc() as * | transpose | sort column</query>
+          <earliest>-24h@h</earliest>
+          <latest>now</latest>
         </search>
-        <initialValue>CPU</initialValue>
+        <initialValue>App-Availability</initialValue>
       </input>
       <chart>
         <search>
           <query>sourcetype=appdynamics_summary  source=infrastructure_performance application_id=$app$
 
-| spath path=infrastructure_performance{} output=names 
-| fields - _raw 
-| fields  names | mvexpand names 
-| spath input=names 
-| fields - names 
-| rename metricValues{}.* as * 
 
-| spath input=names 
-| search metricPath="*|*|$infr_metric_area$|$infr_metric_cat$|*"
-
-| timechart  avg(value) by metricPath  
-| sort  metricPath</query>
+| timechart  avg("$infr_metric$") as "Average"</query>
           <earliest>$myTime.earliest$</earliest>
           <latest>$myTime.latest$</latest>
         </search>
