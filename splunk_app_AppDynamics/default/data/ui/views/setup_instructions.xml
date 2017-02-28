@@ -1,7 +1,7 @@
 <dashboard>
   <label>Setup Instructions</label>
   <description>Setup Instructions for retrieving AppDynamics data into Splunk</description>
-
+ 
   <fieldset submitButton="false"> </fieldset>
   <row>  
    <html>
@@ -41,13 +41,14 @@
       <tr>
           <td>
           <!--    Appdynamics   -->
-         The AppDynamics Summary data input gather metrics in the following categories for ALL applications in AppDynamics:<br /><br/>
+         The AppDynamics Summary data input gather metrics in the following categories for applications in AppDynamics:<br /><br/>
          <ul>
            <li>Overall Application Performance</li>
            <li>End User Experience</li>
+           <li>Applicatin Events</li>
+           <li>Health Rule Violations</li>
            <li>Business Transaction Performance</li>
            <li>Infrastructure Performance</li>
-           <li>Health Rule Violations</li>
          </ul>
          To create a Summary input add your AppDynamics collector's host, you will need the following:<br/><br/>
          <ul>
@@ -56,7 +57,10 @@
            <li>(Optional) Application Name</li>
 
          </ul><br/>
-         <b>Note:</b>  If you leave the 'Application Name' field blank <b>ALL</b> applications will be retrived.  If you want selected applications, simply enter the application name and clone for multiple applications (changing the application name of course). <br/><br/>
+         <b>Note 1: </b>  If you leave the 'Application Name' field blank <b>ALL</b> applications will be retrived.  If you want selected applications, simply enter the application name or a comma-separated list of application names. <br/><br/>
+         <b>Note 2: </b> For larger environments, keep in mind that for each application there will be up to 6 REST API calls made to AppDynamics depending on your metric set selections.   Be sure to allow for this when you specify how frequently to collect the data.  
+         <br />
+         For example, if you have 50 applications and choose all 6 metric sets, that will result in 300 REST API calls to the AppDynamics controller.   If you're collecting the data every 5 minutes (300 seconds), that would be 1 call per second sustained and could have adverse impacts on the AppDynamics Controller. For larger environments, please supply a comma-sparated list of Applications you would like to collect data for in Splunk. <br/>
          <br />
          Create  a new data input by Opening the Splunk Add-on for AppDynamics app.  From there, click the Create New Input button and select "AppDynamics Summary":  
          <br/>
@@ -65,7 +69,7 @@
          <br />
          
          Enter the settings below and save.  <br />
-         <img src="/static/app/splunk_app_AppDynamics/AppDynamics_SummaryInput.png" width="60%" />
+         <img src="/static/app/splunk_app_AppDynamics/AppDynamics_SummaryInput.png" />
          <br/>     
          <br />
          Now visit the <a href="/app/splunk_app_AppDynamics/appdynamics_overview" target="_blank">Overview</a> page and see your AppDynamics data!

@@ -246,9 +246,16 @@ def collect_events(helper, ew):
         for app in application_list:
             get_app_metrics(str(app['id']),str(app['name']))
     else:
-        #  We want 1 specific application from AppDynamics
-        app_id = str(get_app_id(opt_app_name))
-        get_app_metrics(app_id, opt_app_name)
+        #  We want specific application(s) from AppDynamics
+        apps = opt_app_name.split(",")
+        for app_name in apps:
+            app_id = str(get_app_id(app_name))
+            get_app_metrics(app_id, app_name)
+
+        
+        
+        #app_id = str(get_app_id(opt_app_name))
+        #get_app_metrics(app_id, opt_app_name)
 
 
 
