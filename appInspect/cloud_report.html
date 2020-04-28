@@ -49,15 +49,15 @@
                     </tr>
                     <tr>
                         <th>Version</th>
-                        <td>1.8.0</td>
+                        <td>1.8.1</td>
                     </tr>
                     <tr>
                         <th>Hash</th>
-                        <td>bb421a08d0b764161047d12863e176dc</td>
+                        <td>46792a3fc40fd777819bba8f6afea508</td>
                     </tr>
                     <tr>
                         <th>Run Time</th>
-                        <td>2020-02-14T22:00:07.743408</td>
+                        <td>2020-04-24T23:19:32.551515</td>
                     </tr>
                     <tr>
                         <th>Execution Time</th>
@@ -137,7 +137,7 @@
 classified 1625 filesDuplicate file check 1625 files (851 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                          Unique:      400 files                                          Unique:      500 files                                          Unique:      600 files                                          Unique:      700 files                                          Unique:      800 files                                               897 unique files.                              
 Counting:  100Counting:  200Counting:  300Counting:  400Counting:  500Counting:  600Counting:  700Counting:  800     811 files ignored.
 
-github.com/AlDanial/cloc v 1.82  T=2.81 s (306.4 files/s, 82777.3 lines/s)
+github.com/AlDanial/cloc v 1.82  T=2.06 s (417.8 files/s, 112886.9 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
@@ -1081,9 +1081,9 @@ SUM:                           860          36810          53047         142515
                     
                         <li><pre>PRIVATE IP 192.0.2.16 is found in bin/splunk_ta_appdynamics/aob_py3/httplib2/iri2uri.py:88 File: bin/splunk_ta_appdynamics/aob_py3/httplib2/iri2uri.py Line Number: 88</pre></li>
                     
-                        <li><pre>PRIVATE IP 192.168.0.123 is found in README/inputs.conf.spec:2 File: README/inputs.conf.spec Line Number: 2</pre></li>
+                        <li><pre>PRIVATE IP 192.168.0.123 is found in README/inputs.conf.spec:9 File: README/inputs.conf.spec Line Number: 9</pre></li>
                     
-                        <li><pre>PRIVATE IP 192.168.0.123 is found in appserver/static/js/build/globalConfig.json:328 File: appserver/static/js/build/globalConfig.json Line Number: 328</pre></li>
+                        <li><pre>PRIVATE IP 192.168.0.123 is found in appserver/static/js/build/globalConfig.json:477 File: appserver/static/js/build/globalConfig.json Line Number: 477</pre></li>
                     
                     </ul>
                 
@@ -2326,11 +2326,11 @@ To be permissible, the batch input must meet the following criteria:
                     
                     <li><pre>The following line will be inspected during code review. Match: f.open(&#34;GET&#34;,o.url,!1) File: appserver/static/js/build/common.js Line Number: 14</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. Match: request.get(&#34;search&#34;) File: appserver/static/js/build/common.js Line Number: 86</pre></li>
-                    
                     <li><pre>The following line will be inspected during code review. Match: request.get(&#34;adhoc_search_level&#34;) File: appserver/static/js/build/common.js Line Number: 86</pre></li>
                     
                     <li><pre>The following line will be inspected during code review. Match: request.get(&#34;earliest_time&#34;) File: appserver/static/js/build/common.js Line Number: 86</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. Match: request.get(&#34;search&#34;) File: appserver/static/js/build/common.js Line Number: 86</pre></li>
                     
                     <li><pre>The following line will be inspected during code review. Match: request.get(&#34;sample_ratio&#34;) File: appserver/static/js/build/common.js Line Number: 86</pre></li>
                     
@@ -2340,11 +2340,11 @@ To be permissible, the batch input must meet the following criteria:
                     
                     <li><pre>The following line will be inspected during code review. Match: $.post(Splunk.Logger.mode.Server.END_POINT,{data:e}) File: appserver/static/js/build/common.js Line Number: 123</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. Match: http.post(i.urlify(e) File: appserver/static/js/build/common.js Line Number: 132</pre></li>
-                    
                     <li><pre>The following line will be inspected during code review. Match: http.get(i.urlify(e) File: appserver/static/js/build/common.js Line Number: 132</pre></li>
                     
                     <li><pre>The following line will be inspected during code review. Match: http.post(this.urlify(n) File: appserver/static/js/build/common.js Line Number: 132</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. Match: http.post(i.urlify(e) File: appserver/static/js/build/common.js Line Number: 132</pre></li>
                     
                     <li><pre>The following line will be inspected during code review. Match: $.ajax( File: appserver/static/js/build/common.js Line Number: 160</pre></li>
                     
@@ -2911,31 +2911,11 @@ data model acceleration</h6>
  injection).</h6>
                 <ul class="check_messages">
                     
-                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/mako/util.py Line Number: 46</pre></li>
-                    
-                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py2/urllib3/packages/six.py Line Number: 82</pre></li>
-                    
-                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/mako/runtime.py Line Number: 671</pre></li>
+                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/yamlpy3/constructor.py Line Number: 512</pre></li>
                     
                     <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/yamlpy2/constructor.py Line Number: 496</pre></li>
                     
-                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/jinja2/loaders.py Line Number: 472</pre></li>
-                    
-                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py2/mako/util.py Line Number: 46</pre></li>
-                    
-                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py2/jinja2/loaders.py Line Number: 472</pre></li>
-                    
-                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/requests/packages.py Line Number: 7</pre></li>
-                    
-                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/yamlpy3/constructor.py Line Number: 512</pre></li>
-                    
-                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py2/mako/runtime.py Line Number: 671</pre></li>
-                    
-                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/lib2to3/refactor.py Line Number: 32</pre></li>
-                    
-                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/lib2to3/refactor.py Line Number: 226</pre></li>
-                    
-                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/yamlpy2/constructor.py Line Number: 496</pre></li>
+                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/six.py Line Number: 82</pre></li>
                     
                     <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/future/standard_library/__init__.py Line Number: 453</pre></li>
                     
@@ -2949,15 +2929,35 @@ data model acceleration</h6>
                     
                     <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/future/standard_library/__init__.py Line Number: 813</pre></li>
                     
+                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/urllib3/packages/six.py Line Number: 82</pre></li>
+                    
+                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/mako/runtime.py Line Number: 671</pre></li>
+                    
+                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/mako/util.py Line Number: 46</pre></li>
+                    
+                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/jinja2/utils.py Line Number: 142</pre></li>
+                    
+                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/jinja2/utils.py Line Number: 143</pre></li>
+                    
                     <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/util.py Line Number: 146</pre></li>
                     
                     <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/util.py Line Number: 155</pre></li>
                     
-                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/yamlpy3/constructor.py Line Number: 512</pre></li>
+                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/refactor.py Line Number: 35</pre></li>
                     
-                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/util.py Line Number: 146</pre></li>
+                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/refactor.py Line Number: 245</pre></li>
                     
-                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/util.py Line Number: 155</pre></li>
+                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py2/jinja2/utils.py Line Number: 142</pre></li>
+                    
+                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py2/jinja2/utils.py Line Number: 143</pre></li>
+                    
+                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/jinja2/loaders.py Line Number: 472</pre></li>
+                    
+                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/yamlpy2/constructor.py Line Number: 496</pre></li>
+                    
+                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/lib2to3/refactor.py Line Number: 32</pre></li>
+                    
+                    <li><pre>The `__builtin__.__import__` function was detected being used. Please use the `import` keyword instead. Third-Party libraries are exempt from this requirement. File: bin/splunk_ta_appdynamics/aob_py3/lib2to3/refactor.py Line Number: 226</pre></li>
                     
                     <li><pre>Suppressed 18 manual_check messages</pre></li>
                     
@@ -2968,53 +2968,53 @@ data model acceleration</h6>
                 <h6>[ <span class="manual_check">manual_check</span> ] Check for usages of python modules related to file formats</h6>
                 <ul class="check_messages">
                     
-                    <li><pre>The following line will be inspected during code review. The `json.load` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktacollectorlib/common/__init__.py Line Number: 11</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 824</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 974</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 1826</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 1832</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `base64.encode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 2037</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `json.load` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/jsonschema/cli.py Line Number: 18</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `configparser.ConfigParser.readfp` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/splunk_platform.py Line Number: 84</pre></li>
-                    
                     <li><pre>The following line will be inspected during code review. The `json.load` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/jsonschema/tests/test_jsonschema_test_suite.py Line Number: 56</pre></li>
                     
                     <li><pre>The following line will be inspected during code review. The `json.load` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/jsonschema/tests/test_jsonschema_test_suite.py Line Number: 100</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;utf-8&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/httplib2/__init__.py Line Number: 626</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `uu.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;?&#34;], keywords: {&#34;quiet&#34;: &#34;?&#34;} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/email/message.py Line Number: 268</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/email/_encoded_words.py Line Number: 137</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `configparser.ConfigParser.readfp` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/solnlib/splunkenv.py Line Number: 280</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/urllib/request.py Line Number: 824</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `json.dump` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/state_store.py Line Number: 172</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/urllib/request.py Line Number: 974</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `json.load` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/state_store.py Line Number: 182</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/urllib/request.py Line Number: 1826</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/urllib/request.py Line Number: 1832</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `base64.encode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/urllib/request.py Line Number: 2037</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `configparser.ConfigParser.readfp` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/solnlib/splunkenv.py Line Number: 280</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `configparser.ConfigParser.read` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktacollectorlib/data_collection/ta_data_loader.py Line Number: 125</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `json.load` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/state_store.py Line Number: 229</pre></li>
                     
                     <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;utf-8&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/urllib3/contrib/_securetransport/low_level.py Line Number: 184</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/httplib2/socks.py Line Number: 210</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/email/_encoded_words.py Line Number: 137</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `json.load` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/jsonschema/cli.py Line Number: 18</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `csv.reader` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/validators.py Line Number: 270</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `csv.writer` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/validators.py Line Number: 287</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/xmlrpc/client.py Line Number: 437</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/xmlrpc/client.py Line Number: 583</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;utf-8&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/xmlrpc/client.py Line Number: 1215</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `json.load` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/appdynamics_summary.py Line Number: 109</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/solnlib/modular_input/checkpointer.py Line Number: 259</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `json.dump` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/solnlib/modular_input/checkpointer.py Line Number: 264</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `json.load` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/solnlib/modular_input/checkpointer.py Line Number: 282</pre></li>
                     
                     <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/email/base64mime.py Line Number: 74</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;ascii&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/xmlrpc/client.py Line Number: 437</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `base64.decode` module/method can be used to process files outside of the app dir. Function call arguments: [], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/httplib2/socks.py Line Number: 210</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `csv.reader` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {&#34;dialect&#34;: &#34;?&#34;} File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/search_command.py Line Number: 283</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `csv.reader` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {&#34;dialect&#34;: &#34;?&#34;} File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/search_command.py Line Number: 899</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `csv.reader` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {&#34;dialect&#34;: &#34;?&#34;} File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/search_command.py Line Number: 941</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `configparser.ConfigParser.read` module/method can be used to process files outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktacollectorlib/data_collection/ta_data_loader.py Line Number: 125</pre></li>
                     
                     <li><pre>Suppressed 57 manual_check messages</pre></li>
                     
@@ -3025,53 +3025,53 @@ data model acceleration</h6>
                 <h6>[ <span class="manual_check">manual_check</span> ] Check for builtin functions(open, eval, execfile, file) usages in python files</h6>
                 <ul class="check_messages">
                     
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/jsonschema/tests/test_jsonschema_test_suite.py Line Number: 99</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/ply/ygen.py Line Number: 42</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/ply/ygen.py Line Number: 63</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/mako/ext/linguaplugin.py Line Number: 29</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/ply/cpp.py Line Number: 780</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/ply/cpp.py Line Number: 906</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/core/cacerts/ca_certs_locater.py Line Number: 88</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/core/cacerts/ca_certs_locater.py Line Number: 95</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/mako/compat.py Line Number: 112</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/future/backports/http/server.py Line Number: 717</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/urllib3/util/ssl_.py Line Number: 401</pre></li>
+                    
                     <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/pgen2/grammar.py Line Number: 101</pre></li>
                     
                     <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/pgen2/grammar.py Line Number: 107</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/lib2to3/tests/pytree_idempotency.py Line Number: 83</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/urllib3/contrib/securetransport.py Line Number: 389</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/mako/util.py Line Number: 383</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/state_store.py Line Number: 171</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/mako/util.py Line Number: 392</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/state_store.py Line Number: 181</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_main.py Line Number: 75</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/state_store.py Line Number: 228</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_main.py Line Number: 81</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/urllib3/contrib/_securetransport/low_level.py Line Number: 212</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktacollectorlib/common/__init__.py Line Number: 10</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/core/cacerts/ca_certs_locater.py Line Number: 88</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/urllib3/contrib/securetransport.py Line Number: 389</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/core/cacerts/ca_certs_locater.py Line Number: 95</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/lib2to3/pgen2/pgen.py Line Number: 15</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/future/tests/base.py Line Number: 328</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/splunk_aoblib/setup_util.py Line Number: 106</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/future/tests/base.py Line Number: 352</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/jsonschema/cli.py Line Number: 17</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/ply/yacc.py Line Number: 2009</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/jinja2/environment.py Line Number: 689</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py3/jinja2/environment.py Line Number: 1219</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/ply/lex.py Line Number: 179</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/ply/lex.py Line Number: 1058</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/ply/ygen.py Line Number: 42</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/ply/ygen.py Line Number: 63</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/future/backports/http/server.py Line Number: 717</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_parser.py Line Number: 94</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_parser.py Line Number: 95</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_parser.py Line Number: 297</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_parser.py Line Number: 301</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_parser.py Line Number: 349</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `__builtin__.open` module/method can be used to manipulate files outside of the app dir. File: bin/splunk_ta_appdynamics/aob_py2/ply/yacc.py Line Number: 2734</pre></li>
                     
                     <li><pre>Suppressed 154 manual_check messages</pre></li>
                     
@@ -3082,53 +3082,53 @@ data model acceleration</h6>
                 <h6>[ <span class="manual_check">manual_check</span> ] Check for builtin types(file, memoryview, fileinput) usages in python files</h6>
                 <ul class="check_messages">
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py3/lib2to3/tests/pytree_idempotency.py Line Number: 85</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `readlines` usage here. File: bin/splunk_ta_appdynamics/aob_py3/ply/ygen.py Line Number: 43</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `read` usage here. File: bin/splunk_ta_appdynamics/aob_py3/mako/util.py Line Number: 385</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `writelines` usage here. File: bin/splunk_ta_appdynamics/aob_py3/ply/ygen.py Line Number: 64</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `read` usage here. File: bin/splunk_ta_appdynamics/aob_py3/mako/util.py Line Number: 395</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `read` usage here. File: bin/splunk_ta_appdynamics/aob_py3/ply/cpp.py Line Number: 780</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_main.py Line Number: 82</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `read` usage here. File: bin/splunk_ta_appdynamics/aob_py3/ply/cpp.py Line Number: 907</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `read` usage here. File: bin/splunk_ta_appdynamics/aob_py3/urllib3/contrib/securetransport.py Line Number: 390</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `read` usage here. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/core/cacerts/ca_certs_locater.py Line Number: 89</pre></li>
                     
-                    <li><pre>Memoryview objects allow Python code to access the internal data of an object that supports the buffer protocol without copyingPlease manual check memoryview usage here. File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 1221</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/core/cacerts/ca_certs_locater.py Line Number: 98</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py3/jinja2/environment.py Line Number: 691</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `flush` usage here. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/core/cacerts/ca_certs_locater.py Line Number: 99</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py3/jinja2/environment.py Line Number: 1230</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `read` usage here. File: bin/splunk_ta_appdynamics/aob_py2/urllib3/contrib/securetransport.py Line Number: 390</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `writelines` usage here. File: bin/splunk_ta_appdynamics/aob_py3/jinja2/environment.py Line Number: 1227</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `read` usage here. File: bin/splunk_ta_appdynamics/aob_py2/urllib3/contrib/_securetransport/low_level.py Line Number: 213</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `read` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/lex.py Line Number: 1059</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `read` usage here. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/core/cacerts/ca_certs_locater.py Line Number: 89</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/lex.py Line Number: 180</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/core/cacerts/ca_certs_locater.py Line Number: 98</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/lex.py Line Number: 181</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `flush` usage here. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/core/cacerts/ca_certs_locater.py Line Number: 99</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/lex.py Line Number: 182</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `read` usage here. File: bin/splunk_ta_appdynamics/aob_py3/future/tests/base.py Line Number: 298</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/lex.py Line Number: 183</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `read` usage here. File: bin/splunk_ta_appdynamics/aob_py3/future/tests/base.py Line Number: 338</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/lex.py Line Number: 184</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `read` usage here. File: bin/splunk_ta_appdynamics/aob_py3/future/tests/base.py Line Number: 362</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/lex.py Line Number: 185</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py3/future/tests/base.py Line Number: 294</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/lex.py Line Number: 195</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/yacc.py Line Number: 2736</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/lex.py Line Number: 196</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/yacc.py Line Number: 2763</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/lex.py Line Number: 201</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/yacc.py Line Number: 2765</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/lex.py Line Number: 206</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/yacc.py Line Number: 2767</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `readlines` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/ygen.py Line Number: 43</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/yacc.py Line Number: 2768</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `writelines` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/ygen.py Line Number: 64</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/yacc.py Line Number: 2770</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `read` usage here. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_parser.py Line Number: 97</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/yacc.py Line Number: 2772</pre></li>
                     
-                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `read` usage here. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_parser.py Line Number: 302</pre></li>
+                    <li><pre>File read/write operation is detected, it could be used to read/write file content outside of the App Dir. Please manual check `write` usage here. File: bin/splunk_ta_appdynamics/aob_py2/ply/yacc.py Line Number: 2773</pre></li>
                     
                     <li><pre>Suppressed 145 manual_check messages</pre></li>
                     
@@ -3139,13 +3139,13 @@ data model acceleration</h6>
                 <h6>[ <span class="manual_check">manual_check</span> ] Check if circular importing exists in current app</h6>
                 <ul class="check_messages">
                     
-                    <li><pre>The following lines should be inspected during code review, circular importing were detected between python modules in the following files. CircleFile Set: (&#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/types/__init__.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/transforms.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/types/serializable.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/schema.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/iteration.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/validate.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/types/base.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/types/compound.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/types/net.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/types/union.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/datastructures.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/exceptions.py&#39;). Circle importing example: &lt;map object at 0x7fc073cd5ed0&gt;. See filepath and row number for details.</pre></li>
+                    <li><pre>The following lines should be inspected during code review, circular importing were detected between python modules in the following files. CircleFile Set: (&#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/types/__init__.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/transforms.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/types/compound.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/validate.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/types/base.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/types/union.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/types/serializable.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/schema.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/iteration.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/types/net.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/datastructures.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/exceptions.py&#39;). Circle importing example: &lt;map object at 0x7f8e831bcb50&gt;. See filepath and row number for details.</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, circular importing were detected between python modules in the following files. CircleFile Set: (&#39;bin/splunk_ta_appdynamics/aob_py2/lib2to3/pytree.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/lib2to3/pygram.py&#39;). Circle importing example: &lt;map object at 0x7fc02dff7f10&gt;. See filepath and row number for details.</pre></li>
+                    <li><pre>The following lines should be inspected during code review, circular importing were detected between python modules in the following files. CircleFile Set: (&#39;bin/splunk_ta_appdynamics/aob_py2/lib2to3/pytree.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py2/lib2to3/pygram.py&#39;). Circle importing example: &lt;map object at 0x7f8e831b18d0&gt;. See filepath and row number for details.</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, circular importing were detected between python modules in the following files. CircleFile Set: (&#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/types/__init__.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/schema.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/iteration.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/transforms.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/types/serializable.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/validate.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/types/base.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/types/union.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/types/net.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/types/compound.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/datastructures.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/exceptions.py&#39;). Circle importing example: &lt;map object at 0x7fc02dff7f90&gt;. See filepath and row number for details.</pre></li>
+                    <li><pre>The following lines should be inspected during code review, circular importing were detected between python modules in the following files. CircleFile Set: (&#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/types/__init__.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/schema.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/iteration.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/validate.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/types/base.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/types/union.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/types/compound.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/types/serializable.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/types/net.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/transforms.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/datastructures.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/exceptions.py&#39;). Circle importing example: &lt;map object at 0x7f8e831b1950&gt;. See filepath and row number for details.</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, circular importing were detected between python modules in the following files. CircleFile Set: (&#39;bin/splunk_ta_appdynamics/aob_py3/lib2to3/pytree.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/lib2to3/pygram.py&#39;). Circle importing example: &lt;map object at 0x7fc02dfdd750&gt;. See filepath and row number for details.</pre></li>
+                    <li><pre>The following lines should be inspected during code review, circular importing were detected between python modules in the following files. CircleFile Set: (&#39;bin/splunk_ta_appdynamics/aob_py3/lib2to3/pytree.py&#39;, &#39;bin/splunk_ta_appdynamics/aob_py3/lib2to3/pygram.py&#39;). Circle importing example: &lt;map object at 0x7f8e831a1590&gt;. See filepath and row number for details.</pre></li>
                     
                 </ul>
             </div>
@@ -3168,25 +3168,25 @@ data model acceleration</h6>
                 <h6>[ <span class="manual_check">manual_check</span> ] check if data compression and archiving libraries could be used to read &amp; write files outside of app dir</h6>
                 <ul class="check_messages">
                     
-                    <li><pre>The following lines should be inspected during code review, `zipfile.ZipFile` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/requests/utils.py Line Number: 246</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, `zipfile.ZipFile` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py3/jinja2/environment.py Line Number: 697</pre></li>
+                    <li><pre>The following lines should be inspected during code review, `zipfile.ZipFile` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py3/requests/utils.py Line Number: 246</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review, `zipfile.ZipFile` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py2/requests/utils.py Line Number: 246</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, `zipfile.ZipFile` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py3/requests/utils.py Line Number: 246</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, `zipfile.ZipFile` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py2/jinja2/environment.py Line Number: 697</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, `zipfile.ZipFile` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/requests/utils.py Line Number: 246</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, `zipfile.ZipFile` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/compression.py Line Number: 107</pre></li>
-                    
                     <li><pre>The following lines should be inspected during code review, `zipfile.ZipFile` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/compression.py Line Number: 107</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, `zipfile.ZipFile` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py3/jinja2/environment.py Line Number: 697</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, `gzip.open` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/internals.py Line Number: 433</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review, `gzip.open` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/splunklib/searchcommands/internals.py Line Number: 433</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, `gzip.open` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/internals.py Line Number: 433</pre></li>
+                    <li><pre>The following lines should be inspected during code review, `zipfile.ZipFile` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py2/jinja2/environment.py Line Number: 697</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, `zipfile.ZipFile` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/compression.py Line Number: 107</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, `zipfile.ZipFile` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/requests/utils.py Line Number: 246</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, `zipfile.ZipFile` could be used to create an archiving object, it can read or write file outside of app dir. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/requests/utils.py Line Number: 246</pre></li>
                     
                 </ul>
             </div>
@@ -3198,10 +3198,6 @@ data model acceleration</h6>
                     <li><pre>The following lines should be inspected during code review, `pickle.dump` could be used to serialize and deserialize python object. Check if serialization result will be stored outside of App dir. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/pgen2/grammar.py Line Number: 103</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review, `pickle.load` could be used to serialize and deserialize python object. Check if serialization result will be stored outside of App dir. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/pgen2/grammar.py Line Number: 108</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, `pickle.dump` could be used to serialize and deserialize python object. Check if serialization result will be stored outside of App dir. File: bin/splunk_ta_appdynamics/aob_py3/lib2to3/pgen2/grammar.py Line Number: 103</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, `pickle.load` could be used to serialize and deserialize python object. Check if serialization result will be stored outside of App dir. File: bin/splunk_ta_appdynamics/aob_py3/lib2to3/pgen2/grammar.py Line Number: 108</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review, `cPickle.dump` could be used to serialize and deserialize python object. Check if serialization result will be stored outside of App dir. File: bin/splunk_ta_appdynamics/aob_py2/ply/yacc.py Line Number: 2856</pre></li>
                     
@@ -3226,6 +3222,10 @@ data model acceleration</h6>
                     <li><pre>The following lines should be inspected during code review, `cPickle.load` could be used to serialize and deserialize python object. Check if serialization result will be stored outside of App dir. File: bin/splunk_ta_appdynamics/aob_py2/ply/yacc.py Line Number: 2017</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review, `cPickle.load` could be used to serialize and deserialize python object. Check if serialization result will be stored outside of App dir. File: bin/splunk_ta_appdynamics/aob_py2/ply/yacc.py Line Number: 2018</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, `marshal.dump` could be used to serialize and deserialize python object. Check if serialization result will be stored outside of App dir. File: bin/splunk_ta_appdynamics/aob_py2/jinja2/bccache.py Line Number: 38</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, `marshal.load` could be used to serialize and deserialize python object. Check if serialization result will be stored outside of App dir. File: bin/splunk_ta_appdynamics/aob_py2/jinja2/bccache.py Line Number: 44</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review, `marshal.dump` could be used to serialize and deserialize python object. Check if serialization result will be stored outside of App dir. File: bin/splunk_ta_appdynamics/aob_py3/jinja2/bccache.py Line Number: 38</pre></li>
                     
@@ -3259,53 +3259,53 @@ data model acceleration</h6>
                 <h6>[ <span class="manual_check">manual_check</span> ] Check for possible file and directory access, they could be used in external file manipulation</h6>
                 <ul class="check_messages">
                     
-                    <li><pre>The following line will be inspected during code review. The `os.fdopen` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;wb&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/common/util.py Line Number: 106</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `shutil.copy2` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/ply/ygen.py Line Number: 41</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `os.remove` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;@&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/lib2to3/tests/pytree_idempotency.py Line Number: 91</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `os.mkdir` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/core/cacerts/ca_certs_locater.py Line Number: 118</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `os.system` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/lib2to3/tests/pytree_idempotency.py Line Number: 89</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `os.remove` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/core/cacerts/ca_certs_locater.py Line Number: 106</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `os.makedirs` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/mako/util.py Line Number: 62</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `os.dup2` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/http/server.py Line Number: 1141</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `os.mkdir` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_main.py Line Number: 71</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `os.dup2` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/http/server.py Line Number: 1142</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `os.mkdir` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_main.py Line Number: 72</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `os.execve` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;?&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/http/server.py Line Number: 1143</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `shutil.copy` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?/py2_test_grammar.py&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_main.py Line Number: 77</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `shutil.copyfileobj` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/http/server.py Line Number: 817</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `shutil.rmtree` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_main.py Line Number: 38</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `io.BytesIO.write` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/backports/http/server.py Line Number: 773</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `tempfile.mkdtemp` module/method can be used to access file/directory outside of the app dir. Function call arguments: [], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_main.py Line Number: 68</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `shutil.rmtree` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/urllib3/contrib/securetransport.py Line Number: 628</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `shutil.rmtree` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/urllib3/contrib/securetransport.py Line Number: 628</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `os.mkdir` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/state_store.py Line Number: 139</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `os.fdopen` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;wb&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 1745</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `os.remove` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/state_store.py Line Number: 160</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `os.fdopen` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;rb&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 1938</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `os.rename` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?.new&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/state_store.py Line Number: 176</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `os.fdopen` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;rb&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 1947</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `tempfile.mkdtemp` module/method can be used to access file/directory outside of the app dir. Function call arguments: [], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/urllib3/contrib/_securetransport/low_level.py Line Number: 186</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `os.open` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;rb&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 1938</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `os.mkdir` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/core/cacerts/ca_certs_locater.py Line Number: 118</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `os.open` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;rb&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 1947</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `os.remove` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/core/cacerts/ca_certs_locater.py Line Number: 106</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `os.unlink` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 244</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `io.open` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;wt&#34;], keywords: {&#34;encoding&#34;: &#34;utf-8&#34;} File: bin/splunk_ta_appdynamics/aob_py3/future/tests/base.py Line Number: 293</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `os.unlink` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 1656</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `io.open` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;rt&#34;], keywords: {&#34;encoding&#34;: &#34;utf-8&#34;} File: bin/splunk_ta_appdynamics/aob_py3/future/tests/base.py Line Number: 297</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `os.write` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 1763</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `tempfile.mkdtemp` module/method can be used to access file/directory outside of the app dir. Function call arguments: [], keywords: {} File: bin/splunk_ta_appdynamics/aob_py3/future/tests/base.py Line Number: 154</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `tempfile.NamedTemporaryFile` module/method can be used to access file/directory outside of the app dir. Function call arguments: [], keywords: {&#34;delete&#34;: &#34;?&#34;} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 208</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `os.execvp` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/external_search_command.py Line Number: 206</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `tempfile.NamedTemporaryFile` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;rb&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 1454</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `os.execvpe` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;?&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/external_search_command.py Line Number: 208</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `tempfile.NamedTemporaryFile` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;rb&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 1675</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `io.open` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;rt&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/validators.py Line Number: 143</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `tempfile.NamedTemporaryFile` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;wb&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 1735</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `io.open` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;rt&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/validators.py Line Number: 143</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `tempfile.NamedTemporaryFile` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;rb&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 1938</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `os.mkdir` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/jinja2/bccache.py Line Number: 237</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. The `tempfile.NamedTemporaryFile` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;, &#34;rb&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 1947</pre></li>
+                    <li><pre>The following line will be inspected during code review. The `os.remove` module/method can be used to access file/directory outside of the app dir. Function call arguments: [&#34;?&#34;], keywords: {} File: bin/splunk_ta_appdynamics/aob_py2/jinja2/bccache.py Line Number: 286</pre></li>
                     
                     <li><pre>Suppressed 155 manual_check messages</pre></li>
                     
@@ -3316,45 +3316,19 @@ data model acceleration</h6>
                 <h6>[ <span class="manual_check">manual_check</span> ] check if generic operating system modules could be used to communicate with outside services, files or systems</h6>
                 <ul class="check_messages">
                     
-                    <li><pre>The following lines should be inspected during code review. `getpass.getpass` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 2252</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review. `argparse.ArgumentParser.parse_args` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/jsonschema/cli.py Line Number: 60</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review. `argparse.ArgumentParser.parse_args` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/future/backports/http/server.py Line Number: 1222</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review. `getpass.getpass` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/future/backports/urllib/request.py Line Number: 2252</pre></li>
-                    
                     <li><pre>The following lines should be inspected during code review. `logging.StreamHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/common/log.py Line Number: 78</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review. `logging.handlers.RotatingFileHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/common/log.py Line Number: 88</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review. `argparse.ArgumentParser.parse_args` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/mako/cmd.py Line Number: 51</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review. `argparse.ArgumentParser.parse_args` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/chardet/cli/chardetect.py Line Number: 73</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review. `argparse.ArgumentParser.parse_args` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/jsonschema/cli.py Line Number: 60</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review. `logging.StreamHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/urllib3/__init__.py Line Number: 57</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review. `argparse.ArgumentParser.parse_args` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/future/backports/http/server.py Line Number: 1222</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review. `logging.StreamHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/jinja2/runtime.py Line Number: 700</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review. `logging.handlers.RotatingFileHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/log.py Line Number: 136</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review. `logging.handlers.RotatingFileHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/log.py Line Number: 190</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review. `logging.config.fileConfig` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/environment.py Line Number: 103</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review. `logging.StreamHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/environment.py Line Number: 109</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review. `logging.StreamHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/jinja2/runtime.py Line Number: 700</pre></li>
-                    
                     <li><pre>The following lines should be inspected during code review. `logging.StreamHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/future/standard_library/__init__.py Line Number: 75</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review. `logging.StreamHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/common/log.py Line Number: 78</pre></li>
+                    <li><pre>The following lines should be inspected during code review. `argparse.ArgumentParser.parse_args` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/mako/cmd.py Line Number: 51</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review. `logging.handlers.RotatingFileHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/common/log.py Line Number: 88</pre></li>
+                    <li><pre>The following lines should be inspected during code review. `argparse.ArgumentParser.parse_args` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/jsonschema/cli.py Line Number: 60</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review. `argparse.ArgumentParser.parse_args` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/mako/cmd.py Line Number: 51</pre></li>
                     
@@ -3362,7 +3336,33 @@ data model acceleration</h6>
                     
                     <li><pre>The following lines should be inspected during code review. `logging.handlers.RotatingFileHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/log.py Line Number: 190</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review. `argparse.ArgumentParser.parse_args` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/chardet/cli/chardetect.py Line Number: 73</pre></li>
+                    <li><pre>The following lines should be inspected during code review. `logging.config.fileConfig` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/environment.py Line Number: 103</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `logging.StreamHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/environment.py Line Number: 109</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `argparse.ArgumentParser.parse_args` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/future/backports/http/server.py Line Number: 1222</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `getpass.getpass` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/future/backports/urllib/request.py Line Number: 2252</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `logging.StreamHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/future/standard_library/__init__.py Line Number: 75</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `logging.StreamHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py2/jinja2/runtime.py Line Number: 700</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `logging.config.fileConfig` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/splunklib/searchcommands/environment.py Line Number: 103</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `logging.StreamHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/splunklib/searchcommands/environment.py Line Number: 109</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `argparse.ArgumentParser.parse_args` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/jsonschema/cli.py Line Number: 60</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `logging.handlers.RotatingFileHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/log.py Line Number: 136</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `logging.handlers.RotatingFileHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/log.py Line Number: 190</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `logging.StreamHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/urllib3/__init__.py Line Number: 57</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `logging.StreamHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/common/log.py Line Number: 78</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `logging.handlers.RotatingFileHandler` could be used to receive data from outside or log data to outside. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/common/log.py Line Number: 88</pre></li>
                     
                     <li><pre>Suppressed 4 manual_check messages</pre></li>
                     
@@ -3380,21 +3380,21 @@ data model acceleration</h6>
                 <h6>[ <span class="manual_check">manual_check</span> ] Check Python code for importing modules dynamically.</h6>
                 <ul class="check_messages">
                     
-                    <li><pre>The following lines should be inspected during code review, Python code `imp.load_module` for dynamically importing module has been detected. File: bin/splunk_ta_appdynamics/aob_py2/past/translation/__init__.py Line Number: 341</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, Python code `importlib.import_module` for dynamically importing module has been detected. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/core/plugin.py Line Number: 67</pre></li>
-                    
                     <li><pre>The following lines should be inspected during code review, Python code `imp.load_module` for dynamically importing module has been detected. File: bin/splunk_ta_appdynamics/aob_py3/future/standard_library/__init__.py Line Number: 301</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review, Python code `importlib.import_module` for dynamically importing module has been detected. File: bin/splunk_ta_appdynamics/aob_py3/future/standard_library/__init__.py Line Number: 691</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, Python code `imp.load_module` for dynamically importing module has been detected. File: bin/splunk_ta_appdynamics/aob_py3/past/translation/__init__.py Line Number: 341</pre></li>
-                    
                     <li><pre>The following lines should be inspected during code review, Python code `importlib.import_module` for dynamically importing module has been detected. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/core/plugin.py Line Number: 67</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, Python code `importlib.import_module` for dynamically importing module has been detected. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/core/plugin.py Line Number: 67</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review, Python code `imp.load_module` for dynamically importing module has been detected. File: bin/splunk_ta_appdynamics/aob_py2/future/standard_library/__init__.py Line Number: 301</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review, Python code `importlib.import_module` for dynamically importing module has been detected. File: bin/splunk_ta_appdynamics/aob_py2/future/standard_library/__init__.py Line Number: 691</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, Python code `imp.load_module` for dynamically importing module has been detected. File: bin/splunk_ta_appdynamics/aob_py2/past/translation/__init__.py Line Number: 341</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, Python code `imp.load_module` for dynamically importing module has been detected. File: bin/splunk_ta_appdynamics/aob_py3/past/translation/__init__.py Line Number: 341</pre></li>
                     
                 </ul>
             </div>
@@ -3416,10 +3416,6 @@ data model acceleration</h6>
                     
                     <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py2/urllib3/util/connection.py Line Number: 74</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py3/httplib2/__init__.py Line Number: 1198</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py3/httplib2/__init__.py Line Number: 1309</pre></li>
-                    
                     <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py3/httplib2/socks.py Line Number: 481</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py3/httplib2/socks.py Line Number: 488</pre></li>
@@ -3429,8 +3425,6 @@ data model acceleration</h6>
                     <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py3/httplib2/socks.py Line Number: 502</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py3/httplib2/socks.py Line Number: 508</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/binding.py Line Number: 557</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py2/httplib2/socks.py Line Number: 481</pre></li>
                     
@@ -3442,13 +3436,17 @@ data model acceleration</h6>
                     
                     <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py2/httplib2/socks.py Line Number: 508</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/splunklib/binding.py Line Number: 557</pre></li>
-                    
                     <li><pre>The following lines should be inspected during code review. `socket.bind` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py3/urllib3/util/connection.py Line Number: 73</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review. `socket.bind` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py3/urllib3/util/connection.py Line Number: 128</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py3/urllib3/util/connection.py Line Number: 74</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/splunklib/binding.py Line Number: 557</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py3/httplib2/__init__.py Line Number: 1198</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py3/httplib2/__init__.py Line Number: 1309</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py2/httplib2/__init__.py Line Number: 1206</pre></li>
                     
@@ -3457,6 +3455,8 @@ data model acceleration</h6>
                     <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py2/httplib2/__init__.py Line Number: 1358</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py2/httplib2/__init__.py Line Number: 1360</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review. `socket.connect` could be used to open socket connection to outside service. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/binding.py Line Number: 557</pre></li>
                     
                 </ul>
             </div>
@@ -3467,27 +3467,29 @@ data model acceleration</h6>
                     
                     <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py2/winreg/__init__.py Line Number: 6</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/requests/utils.py Line Number: 52</pre></li>
+                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/future/moves/winreg.py Line Number: 8</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/requests/utils.py Line Number: 57</pre></li>
+                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/requests/utils.py Line Number: 52</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/requests/utils.py Line Number: 60</pre></li>
+                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/requests/utils.py Line Number: 57</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/requests/utils.py Line Number: 63</pre></li>
+                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/requests/utils.py Line Number: 60</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/requests/utils.py Line Number: 67</pre></li>
+                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/requests/utils.py Line Number: 63</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/requests/utils.py Line Number: 73</pre></li>
+                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/requests/utils.py Line Number: 67</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/requests/utils.py Line Number: 76</pre></li>
+                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/requests/utils.py Line Number: 73</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/requests/utils.py Line Number: 79</pre></li>
+                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/requests/utils.py Line Number: 76</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/requests/utils.py Line Number: 80</pre></li>
+                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/requests/utils.py Line Number: 79</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/requests/utils.py Line Number: 81</pre></li>
+                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/requests/utils.py Line Number: 80</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/requests/utils.py Line Number: 82</pre></li>
+                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/requests/utils.py Line Number: 81</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/requests/utils.py Line Number: 82</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py2/requests/utils.py Line Number: 52</pre></li>
                     
@@ -3511,8 +3513,6 @@ data model acceleration</h6>
                     
                     <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py2/requests/utils.py Line Number: 82</pre></li>
                     
-                    <li><pre>The following lines should be inspected during code review, MS Windows specific services usage `_winreg` has been detected File: bin/splunk_ta_appdynamics/aob_py3/requests/utils.py Line Number: 52</pre></li>
-                    
                     <li><pre>Suppressed 27 manual_check messages</pre></li>
                     
                 </ul>
@@ -3529,29 +3529,29 @@ data model acceleration</h6>
                 <h6>[ <span class="manual_check">manual_check</span> ] check for plain text credentials disclosure in python files</h6>
                 <ul class="check_messages">
                     
-                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `clear_password = ` File: bin/splunk_ta_appdynamics/aob_py3/solnlib/credentials.py Line Number: 269</pre></li>
-                    
                     <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `self.PASSWORD = ********` File: bin/splunk_ta_appdynamics/aob_py3/splunktaucclib/rest_handler/handler.py Line Number: 157</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `clear_password = ` File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/credentials.py Line Number: 243</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `encr_password = ` File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/credentials.py Line Number: 244</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `clear_password = ` File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/credentials.py Line Number: 243</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `encr_password = ` File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/credentials.py Line Number: 244</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `self.PASSWORD = ********` File: bin/splunk_ta_appdynamics/aob_py2/splunktaucclib/rest_handler/handler.py Line Number: 157</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `PASSWORD = ********` File: bin/splunk_ta_appdynamics/aob_py3/splunktaucclib/rest_handler/credentials.py Line Number: 89</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `PATH_STORAGE_PASSWORDS = storage/passwords` File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/splunklib/client.py Line Number: 109</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `PASSWORD = ********` File: bin/splunk_ta_appdynamics/aob_py2/splunktaucclib/rest_handler/credentials.py Line Number: 89</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `clear_password = ` File: bin/splunk_ta_appdynamics/aob_py2/solnlib/credentials.py Line Number: 269</pre></li>
                     
+                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `PASSWORD = ********` File: bin/splunk_ta_appdynamics/aob_py2/splunktaucclib/rest_handler/credentials.py Line Number: 89</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `PATH_STORAGE_PASSWORDS = storage/passwords` File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/splunklib/client.py Line Number: 109</pre></li>
+                    
                     <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `PATH_STORAGE_PASSWORDS = storage/passwords` File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/client.py Line Number: 109</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `clear_password = ` File: bin/splunk_ta_appdynamics/aob_py3/solnlib/credentials.py Line Number: 269</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `encr_password = ` File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/credentials.py Line Number: 244</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `clear_password = ` File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/credentials.py Line Number: 243</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `self.PASSWORD = ********` File: bin/splunk_ta_appdynamics/aob_py2/splunktaucclib/rest_handler/handler.py Line Number: 157</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `encr_password = ` File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/credentials.py Line Number: 244</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `clear_password = ` File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/credentials.py Line Number: 243</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, Possible plain text credentials disclosure here, `PASSWORD = ********` File: bin/splunk_ta_appdynamics/aob_py3/splunktaucclib/rest_handler/credentials.py Line Number: 89</pre></li>
                     
                 </ul>
             </div>
@@ -3562,53 +3562,53 @@ data model acceleration</h6>
  whole.</h6>
                 <ul class="check_messages">
                     
-                    <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/modinput.py Line Number: 124</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. subprocess.Popen.communicate usage detected. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/modinput.py Line Number: 124</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/splunk_platform.py Line Number: 62</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. subprocess.Popen.communicate usage detected. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/splunk_platform.py Line Number: 64</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py2/future/backports/http/server.py Line Number: 1165</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. subprocess.Popen.communicate usage detected. File: bin/splunk_ta_appdynamics/aob_py2/future/backports/http/server.py Line Number: 1179</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. subprocess.check_call usage detected. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_parser.py Line Number: 86</pre></li>
-                    
                     <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py3/jsonschema/tests/test_jsonschema_test_suite.py Line Number: 49</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/splunkenv.py Line Number: 270</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. subprocess.Popen.communicate usage detected. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/splunkenv.py Line Number: 273</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/modinput.py Line Number: 124</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. subprocess.Popen.communicate usage detected. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/modinput.py Line Number: 124</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/splunk_platform.py Line Number: 62</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. subprocess.Popen.communicate usage detected. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/splunk_platform.py Line Number: 64</pre></li>
                     
                     <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py3/future/backports/http/server.py Line Number: 1165</pre></li>
                     
                     <li><pre>The following line will be inspected during code review. subprocess.Popen.communicate usage detected. File: bin/splunk_ta_appdynamics/aob_py3/future/backports/http/server.py Line Number: 1179</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/external_search_command.py Line Number: 136</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py2/jsonschema/tests/test_jsonschema_test_suite.py Line Number: 49</pre></li>
-                    
-                    <li><pre>The following line will be inspected during code review. Questionable usage `multiprocessing.Process.start` found in loop. File: bin/splunk_ta_appdynamics/aob_py3/lib2to3/refactor.py Line Number: 700</pre></li>
-                    
                     <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/splunkenv.py Line Number: 270</pre></li>
                     
                     <li><pre>The following line will be inspected during code review. subprocess.Popen.communicate usage detected. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/splunkenv.py Line Number: 273</pre></li>
                     
+                    <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/searchcommands/external_search_command.py Line Number: 136</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. subprocess.check_call usage detected. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/tests/test_parser.py Line Number: 86</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. Questionable usage `multiprocessing.Process.start` found in loop. File: bin/splunk_ta_appdynamics/aob_py2/lib2to3/refactor.py Line Number: 719</pre></li>
+                    
                     <li><pre>The following line will be inspected during code review. subprocess.check_call usage detected. File: bin/splunk_ta_appdynamics/aob_py3/lib2to3/tests/test_parser.py Line Number: 87</pre></li>
                     
-                    <li><pre>The following line will be inspected during code review. Questionable usage `threading.Thread.start` found in loop. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/concurrent/thread_pool.py Line Number: 166</pre></li>
+                    <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py2/future/backports/http/server.py Line Number: 1165</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. subprocess.Popen.communicate usage detected. File: bin/splunk_ta_appdynamics/aob_py2/future/backports/http/server.py Line Number: 1179</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py2/future/backports/misc.py Line Number: 706</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. subprocess.Popen.communicate usage detected. File: bin/splunk_ta_appdynamics/aob_py2/future/backports/misc.py Line Number: 707</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. Questionable usage `multiprocessing.Process.start` found in loop. File: bin/splunk_ta_appdynamics/aob_py3/lib2to3/refactor.py Line Number: 700</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/splunklib/searchcommands/external_search_command.py Line Number: 136</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/splunk_platform.py Line Number: 62</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. subprocess.Popen.communicate usage detected. File: bin/splunk_ta_appdynamics/aob_py2/cloudconnectlib/splunktalib/splunk_platform.py Line Number: 64</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/modinput.py Line Number: 124</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. subprocess.Popen.communicate usage detected. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/modinput.py Line Number: 124</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py2/jsonschema/tests/test_jsonschema_test_suite.py Line Number: 49</pre></li>
                     
                     <li><pre>The following line will be inspected during code review. subprocess.Popen usage detected. File: bin/splunk_ta_appdynamics/aob_py3/future/backports/misc.py Line Number: 706</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. subprocess.Popen.communicate usage detected. File: bin/splunk_ta_appdynamics/aob_py3/future/backports/misc.py Line Number: 707</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. Questionable usage `threading.Thread.start` found in loop. File: bin/splunk_ta_appdynamics/aob_py3/cloudconnectlib/splunktalib/concurrent/thread_pool.py Line Number: 166</pre></li>
+                    
+                    <li><pre>The following line will be inspected during code review. Questionable usage `multiprocessing.Process.start` found in loop. File: bin/splunk_ta_appdynamics/aob_py2/concurrent/futures/process.py Line Number: 325</pre></li>
                     
                     <li><pre>Suppressed 7 manual_check messages</pre></li>
                     
@@ -3633,13 +3633,13 @@ data model acceleration</h6>
                 <h6>[ <span class="manual_check">manual_check</span> ] Check if python runtime services could be used to manipulate system python objects</h6>
                 <ul class="check_messages">
                     
-                    <li><pre>The following lines should be inspected during code review, Possible system python objects manipulation `inspect.stack` found here. File: bin/splunk_ta_appdynamics/aob_py2/past/builtins/misc.py Line Number: 69</pre></li>
-                    
-                    <li><pre>The following lines should be inspected during code review, Possible system python objects manipulation `inspect.stack` found here. File: bin/splunk_ta_appdynamics/aob_py2/future/utils/__init__.py Line Number: 366</pre></li>
-                    
                     <li><pre>The following lines should be inspected during code review, Possible system python objects manipulation `inspect.stack` found here. File: bin/splunk_ta_appdynamics/aob_py3/future/utils/__init__.py Line Number: 366</pre></li>
                     
                     <li><pre>The following lines should be inspected during code review, Possible system python objects manipulation `inspect.stack` found here. File: bin/splunk_ta_appdynamics/aob_py3/past/builtins/misc.py Line Number: 69</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, Possible system python objects manipulation `inspect.stack` found here. File: bin/splunk_ta_appdynamics/aob_py2/past/builtins/misc.py Line Number: 69</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, Possible system python objects manipulation `inspect.stack` found here. File: bin/splunk_ta_appdynamics/aob_py2/future/utils/__init__.py Line Number: 366</pre></li>
                     
                 </ul>
             </div>
@@ -3676,13 +3676,13 @@ data model acceleration</h6>
                 <h6>[ <span class="manual_check">manual_check</span> ] Check that all network communications are encrypted</h6>
                 <ul class="check_messages">
                     
-                    <li><pre>Please check for inbound or outbound unencrypted network communications in `ftplib.FTP`. All communications with Splunk Cloud must be encrypted. File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 2319</pre></li>
-                    
-                    <li><pre>Please check for inbound or outbound unencrypted network communications in `ftplib.FTP.connect`. All communications with Splunk Cloud must be encrypted. File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 2320</pre></li>
-                    
                     <li><pre>Please check for inbound or outbound unencrypted network communications in `ftplib.FTP`. All communications with Splunk Cloud must be encrypted. File: bin/splunk_ta_appdynamics/aob_py3/future/backports/urllib/request.py Line Number: 2319</pre></li>
                     
                     <li><pre>Please check for inbound or outbound unencrypted network communications in `ftplib.FTP.connect`. All communications with Splunk Cloud must be encrypted. File: bin/splunk_ta_appdynamics/aob_py3/future/backports/urllib/request.py Line Number: 2320</pre></li>
+                    
+                    <li><pre>Please check for inbound or outbound unencrypted network communications in `ftplib.FTP`. All communications with Splunk Cloud must be encrypted. File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 2319</pre></li>
+                    
+                    <li><pre>Please check for inbound or outbound unencrypted network communications in `ftplib.FTP.connect`. All communications with Splunk Cloud must be encrypted. File: bin/splunk_ta_appdynamics/aob_py2/future/backports/urllib/request.py Line Number: 2320</pre></li>
                     
                 </ul>
             </div>
@@ -3698,9 +3698,9 @@ data model acceleration</h6>
                 <h6>[ <span class="manual_check">manual_check</span> ] Check for untrusted xml usages in python libraries</h6>
                 <ul class="check_messages">
                     
-                    <li><pre>The following lines should be inspected during code review, the xml functions not safe enough. Using various XLM methods to parse untrusted XML data is known to be vulnerable to XML attacks. Methods should be replaced with their defusedxml equivalents.Module/Method is xml.etree.ElementTree.iterparse File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/splunklib/results.py Line Number: 219</pre></li>
-                    
                     <li><pre>The following lines should be inspected during code review, the xml functions not safe enough. Using various XLM methods to parse untrusted XML data is known to be vulnerable to XML attacks. Methods should be replaced with their defusedxml equivalents.Module/Method is xml.etree.ElementTree.iterparse File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/splunklib/results.py Line Number: 219</pre></li>
+                    
+                    <li><pre>The following lines should be inspected during code review, the xml functions not safe enough. Using various XLM methods to parse untrusted XML data is known to be vulnerable to XML attacks. Methods should be replaced with their defusedxml equivalents.Module/Method is xml.etree.ElementTree.iterparse File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/splunklib/results.py Line Number: 219</pre></li>
                     
                 </ul>
             </div>
@@ -3726,9 +3726,9 @@ data model acceleration</h6>
                     
                     <li><pre>PRIVATE IP 192.0.2.16 is found in bin/splunk_ta_appdynamics/aob_py3/httplib2/iri2uri.py:88 File: bin/splunk_ta_appdynamics/aob_py3/httplib2/iri2uri.py Line Number: 88</pre></li>
                     
-                    <li><pre>PRIVATE IP 192.168.0.123 is found in README/inputs.conf.spec:2 File: README/inputs.conf.spec Line Number: 2</pre></li>
+                    <li><pre>PRIVATE IP 192.168.0.123 is found in README/inputs.conf.spec:9 File: README/inputs.conf.spec Line Number: 9</pre></li>
                     
-                    <li><pre>PRIVATE IP 192.168.0.123 is found in appserver/static/js/build/globalConfig.json:328 File: appserver/static/js/build/globalConfig.json Line Number: 328</pre></li>
+                    <li><pre>PRIVATE IP 192.168.0.123 is found in appserver/static/js/build/globalConfig.json:477 File: appserver/static/js/build/globalConfig.json Line Number: 477</pre></li>
                     
                 </ul>
             </div>
@@ -3813,13 +3813,13 @@ data model acceleration</h6>
                 <h6>[ <span class="manual_check">manual_check</span> ] Check for insecure HTTP calls in Python.</h6>
                 <ul class="check_messages">
                     
+                    <li><pre>Possible insecure HTTP Connection. Match: urllib2.urlopen Positional arguments, [&#34;?&#34;]; Keyword arguments, {} File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/types/net.py Line Number: 254</pre></li>
+                    
                     <li><pre>Possible insecure HTTP Connection. Match: http.client.HTTPConnection Positional arguments, [&#34;?&#34;]; Keyword arguments, {&#34;key_file&#34;: &#34;?&#34;, &#34;cert_file&#34;: &#34;?&#34;, &#34;timeout&#34;: &#34;?&#34;, &#34;proxy_info&#34;: &#34;?&#34;, &#34;ca_certs&#34;: &#34;?&#34;, &#34;disable_ssl_certificate_validation&#34;: &#34;?&#34;, &#34;tls_maximum_version&#34;: &#34;?&#34;, &#34;tls_minimum_version&#34;: &#34;?&#34;} File: bin/splunk_ta_appdynamics/aob_py3/httplib2/__init__.py Line Number: 1775</pre></li>
                     
                     <li><pre>Possible insecure HTTP Connection. Match: http.client.HTTPConnection Positional arguments, [&#34;?&#34;]; Keyword arguments, {&#34;timeout&#34;: &#34;?&#34;, &#34;proxy_info&#34;: &#34;?&#34;, &#34;ca_certs&#34;: &#34;?&#34;, &#34;disable_ssl_certificate_validation&#34;: &#34;?&#34;, &#34;tls_maximum_version&#34;: &#34;?&#34;, &#34;tls_minimum_version&#34;: &#34;?&#34;} File: bin/splunk_ta_appdynamics/aob_py3/httplib2/__init__.py Line Number: 1787</pre></li>
                     
                     <li><pre>Possible insecure HTTP Connection. Match: http.client.HTTPConnection Positional arguments, [&#34;?&#34;]; Keyword arguments, {&#34;timeout&#34;: &#34;?&#34;, &#34;proxy_info&#34;: &#34;?&#34;} File: bin/splunk_ta_appdynamics/aob_py3/httplib2/__init__.py Line Number: 1797</pre></li>
-                    
-                    <li><pre>Possible insecure HTTP Connection. Match: urllib2.urlopen Positional arguments, [&#34;?&#34;]; Keyword arguments, {} File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/types/net.py Line Number: 254</pre></li>
                     
                     <li><pre>Possible insecure HTTP Connection. Match: httplib.HTTPConnection Positional arguments, [&#34;?&#34;]; Keyword arguments, {&#34;key_file&#34;: &#34;?&#34;, &#34;cert_file&#34;: &#34;?&#34;, &#34;timeout&#34;: &#34;?&#34;, &#34;proxy_info&#34;: &#34;?&#34;, &#34;ca_certs&#34;: &#34;?&#34;, &#34;disable_ssl_certificate_validation&#34;: &#34;?&#34;, &#34;ssl_version&#34;: &#34;?&#34;} File: bin/splunk_ta_appdynamics/aob_py2/httplib2/__init__.py Line Number: 1952</pre></li>
                     
@@ -3827,7 +3827,7 @@ data model acceleration</h6>
                     
                     <li><pre>Possible insecure HTTP Connection. Match: httplib.HTTPConnection Positional arguments, [&#34;?&#34;]; Keyword arguments, {&#34;timeout&#34;: &#34;?&#34;, &#34;proxy_info&#34;: &#34;?&#34;} File: bin/splunk_ta_appdynamics/aob_py2/httplib2/__init__.py Line Number: 1972</pre></li>
                     
-                    <li><pre>Possible insecure HTTP Connection. Match: urllib2.urlopen Positional arguments, [&#34;?&#34;]; Keyword arguments, {} File: bin/splunk_ta_appdynamics/aob_py3/solnlib/packages/schematics/types/net.py Line Number: 254</pre></li>
+                    <li><pre>Possible insecure HTTP Connection. Match: urllib2.urlopen Positional arguments, [&#34;?&#34;]; Keyword arguments, {} File: bin/splunk_ta_appdynamics/aob_py2/solnlib/packages/schematics/types/net.py Line Number: 254</pre></li>
                     
                 </ul>
             </div>
@@ -3836,7 +3836,7 @@ data model acceleration</h6>
                 <h6>[ <span class="manual_check">manual_check</span> ] Check for passwords and secrets.</h6>
                 <ul class="check_messages">
                     
-                    <li><pre>The following line will be inspected during code review.Possible secret disclosure found. Match: appd_password = The File: README/inputs.conf.spec Line Number: 4</pre></li>
+                    <li><pre>The following line will be inspected during code review.Possible secret disclosure found. Match: appd_password = The File: README/inputs.conf.spec Line Number: 11</pre></li>
                     
                     <li><pre>The following line will be inspected during code review.Possible secret disclosure found. Match: appd_password = The File: README/inputs.conf.spec Line Number: 21</pre></li>
                     
