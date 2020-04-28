@@ -6,16 +6,18 @@ curl -X GET -u tomm@splunk.com --url "https://api.splunk.com/2.0/rest/login/splu
 {"status_code":200,"status":"success","msg":"Successfully authenticated user and assigned a token","data":{"token":"xxx","user":{"name":"Tom Martin","email":"tomm@splunk.com","username":"tomm_splunk","groups":["Beta Users","SplunkEmployee","waitomo_lim_avail_user"]}}}
 
 
+** Now use the token value in each of the calls below
+
 
 2.  submit an application for validation
 curl -X POST \
      -H "Authorization: bearer xxx" \
      -H "Cache-Control: no-cache" \
-     -F "app_package=@\"/Users/tomm/Documents/GitHub/splunk-appdynamics/distributions/Splunk_TA_AppDynamics-1.8.0.tar.gz\"" \
+     -F "app_package=@\"/Users/tomm/Documents/GitHub/splunk-appdynamics/distributions/Splunk_TA_AppDynamics-1.8.1.tar.gz\"" \
      --url "https://appinspect.splunk.com/v1/app/validate"
 
 
-"request_id": "94142b3b-4996-4fa8-90ae-773d4620b297",
+"request_id": "0fc2252e-8641-4b6a-a50d-2c708052fc27",
 
 
 
@@ -23,12 +25,12 @@ curl -X POST \
 curl -X POST \
      -H "Authorization: bearer xxx" \
     -H "Cache-Control: no-cache" \
-    -F "app_package=@\"/Users/tomm/Documents/GitHub/splunk-appdynamics/distributions/Splunk_TA_AppDynamics-1.8.0.tar.gz\"" \
+    -F "app_package=@\"/Users/tomm/Documents/GitHub/splunk-appdynamics/distributions/Splunk_TA_AppDynamics-1.8.1.tar.gz\"" \
     -F "included_tags=cloud" \
     --url "https://appinspect.splunk.com/v1/app/validate"
 
 
-"request_id": "e6a19279-9163-4b11-bfe6-cc34086925ff",
+"request_id": "d55ec5c1-5d08-4749-b64f-ece9dae29f21",
 
 
 
@@ -37,22 +39,22 @@ curl -X POST \
 curl -X POST \
      -H "Authorization: bearer xxx" \
     -H "Cache-Control: no-cache" \
-    -F "app_package=@\"/Users/tomm/Documents/GitHub/splunk-appdynamics/distributions/Splunk_TA_AppDynamics-1.8.0.tar.gz\"" \
+    -F "app_package=@\"/Users/tomm/Documents/GitHub/splunk-appdynamics/distributions/Splunk_TA_AppDynamics-1.8.1.tar.gz\"" \
     -F "included_tags=py3_migration" \
     --url "https://appinspect.splunk.com/v1/app/validate"
 
 
-
+"request_id": "86972840-3d67-4e86-9608-db0a17a9fc41"
 
 
 
 5.  Retrieve the status of the validation
 curl -X GET \
      -H "Authorization: bearer xxx" \
-        --url https://appinspect.splunk.com/v1/app/validate/status/94142b3b-4996-4fa8-90ae-773d4620b297
+        --url https://appinspect.splunk.com/v1/app/validate/status/0fc2252e-8641-4b6a-a50d-2c708052fc27
 
 {
-    "request_id": "c703cf7e-e317-4c64-9c91-72badf19b978",
+    "request_id": "0fc2252e-8641-4b6a-a50d-2c708052fc27",
     "status": "SUCCESS",
     "info": {
         "error": 0,
@@ -79,13 +81,15 @@ curl -X GET \
 
 6.Get the report results   (one for each of the 3 request ID above)
 curl -X GET \
-     -H "Authorization: bearer xxx" \
+     -H "Authorization: bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7InVpZCI6IjkyMjgyNiIsInVuYW1lIjoidG9tbV9zcGx1bmsiLCJuYW1lIjoiVG9tIE1hcnRpbiIsImVtYWlsIjoidG9tbUBzcGx1bmsuY29tIiwiZGF0ZV9yZWciOiIxNDY0MDgzMzE2Iiwic3RhdGUiOiIzIiwib2t0YV9pZHBfaWQiOiIwMHUxeXp4aGt1Y0NhcVhSSjJwNyIsInNhbGVzZm9yY2VfaWQiOiIwMDMzMzAwMDAxbThuWDRBQUkiLCJzYWxlc2ZvcmNlX3VzZXJfaWQiOiIwIiwibGRhcF9kbiI6InRvbW0iLCJpc19vbmV0aW1lX2VtYWlsX2J5cGFzc19vbiI6IjAiLCJwYXJlbnRzIjpbIkJldGEgVXNlcnMiLCJTcGx1bmtFbXBsb3llZSIsIndhaXRvbW9fbGltX2F2YWlsX3VzZXIiXSwidmFsaWRhdGVkX2VtYWlsIjoiIiwic2lnbnVwX3R5cGUiOiJyZWd1bGFyIiwiaXNfdHJvb3BfaWRfdmFsaWRhdGVkIjpmYWxzZX0sImlhdCI6MTU4ODA4ODQwNSwiZXhwIjoxNTg4MTc0ODA1LCJhdWQiOiJzcGx1bmsuY29tIiwiaXNzIjoic3BsdW5rLmNvbSJ9.gdvVlPgVfxv8QWBZEgEIlJHX_tAL92U8zruN7rDDEhY" \
          -H "Cache-Control: no-cache" \
          -H "Content-Type: text/html" \
-         --url "https://appinspect.splunk.com/v1/app/report/c703cf7e-e317-4c64-9c91-72badf19b978"
+         --url "https://appinspect.splunk.com/v1/app/report/86972840-3d67-4e86-9608-db0a17a9fc41"
 
 
-validation:  94142b3b-4996-4fa8-90ae-773d4620b297
-cloud: e6a19279-9163-4b11-bfe6-cc34086925ff
-py3:  3863a16d-8370-482c-acb6-e279b5bc0932
+validation:    0fc2252e-8641-4b6a-a50d-2c708052fc27
+cloud:         d55ec5c1-5d08-4749-b64f-ece9dae29f21
+py3_migration: 86972840-3d67-4e86-9608-db0a17a9fc41
+
+
 
